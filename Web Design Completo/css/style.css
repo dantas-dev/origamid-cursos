@@ -12,6 +12,7 @@ p{
 img{
 	/* faz com que tira uma margem padrão de um elemento imagem */
 	display: block;
+	max-width: 100%;  /* macete para manter a imagem fluida */
 }
 .btn{
 	border: 3px solid #fec63e;
@@ -174,8 +175,11 @@ img{
 	padding: 60px 0px;
 }
 .produtos_lista li{
-	background: #fec63e;
-	text-align: center; 
+	background: #fec63e;	
+	text-align: center;
+}
+.produtos_lista li img{
+	margin: 0px auto;
 }
 .produtos_lista li h3{
 	font-weight: bold;
