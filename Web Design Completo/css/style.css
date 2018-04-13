@@ -1,4 +1,4 @@
-------------------
+/*------------------
 	Geral Styles
 --------------------*/
 body{
@@ -23,6 +23,7 @@ img{
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	font-weight: bold;
+	transition: all .5s ease;
 }
 .btn:hover{
 	color: #fff;
@@ -96,6 +97,7 @@ img{
 	font-size: 14px;
 	line-height: 20px;
 	padding: 10px 0px;	
+	transition: all .3s ease;
 }
 .header_menu ul li a:hover{
 	color: #fff;
@@ -227,7 +229,7 @@ img{
 .portfolio .subtitulo::after{
 	background: #fec63e;
 }
-.portfolio_lista li:last-child{
+.portfolio_lista div:last-of-type{
 	margin-top: 20px;
 }
 .portfolio .call p{
@@ -335,6 +337,7 @@ img{
 	border: 3px solid #fec63e;
 	display: block;
 	padding: 10px;
+	transition: all .3s ease;
 }
 .footer_redes ul li a:hover{
 	border-color: #fff; 
@@ -345,3 +348,46 @@ img{
 	padding: 20px 0px;
 }
 /* --------------------------------------
+
+/* Anim */
+.js .introducao h1, .js .introducao blockquote, .js .introducao .btn, .js .animar, .js .animar-interno, .js .introducao-interna h1, .js .introducao-interna p{
+	opacity: 0;
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/portfolio.css">
 	<link rel="stylesheet" type="text/css" href="css/responsivo.css">		
+	<script type="text/javascript" src="js/libs/modernizr.custom.45655.js"></script>
 </head>
 <body>
 
@@ -46,11 +47,27 @@
 
 <!-- BLOCKQUOTE -->
 
-	<section class="container">
-		<blockquote class="quote_clientes">
-			<p>“Pedalar sempre foi a minha paixão, o que o pessoal da Bikcraft fez foi intensificar o meu amor por esta atividade. Recomendo à todos que amo.”</p>
-			<cite>Barbara Moss</cite>
-		</blockquote>
+	<section class="container animar-interno">
+		<ul class="rslides">
+			<li>
+				<blockquote class="quote_clientes">
+					<p>“Pedalar sempre foi a minha paixão, o que o pessoal da Bikcraft fez foi intensificar o meu amor por esta atividade. Recomendo à todos que amo.”</p>
+					<cite>Barbara Moss</cite>
+				</blockquote>
+			</li>
+			<li>
+				<blockquote class="quote_clientes">
+					<p>“Pedalar sempre foi a minha paixão, o que o pessoal da Bikcraft fez foi intensificar o meu amor por esta atividade. Recomendo à todos que amo.”</p>
+					<cite>Tio Jão</cite>
+				</blockquote>
+			</li>
+			<li>
+				<blockquote class="quote_clientes">
+					<p>“Pedalar sempre foi a minha paixão, o que o pessoal da Bikcraft fez foi intensificar o meu amor por esta atividade. Recomendo à todos que amo.”</p>
+					<cite>Jhony Rato</cite>
+				</blockquote>
+			</li>
+		</ul>
 	</section>
 
 <!-- END BLOCKQUOTE -->
@@ -58,11 +75,20 @@
 <!-- PORTFOLIO -->
 	
 	<section class="portfolio">
-		<div class="container">			
-			<ul class="portfolio_lista">
-				<li class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicileta Retrô"></li>
-				<li class="grid-8" ><img src="img/portfolio/passeio.jpg" alt="Bicileta Passeio"></li>
-				<li class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicileta Esporte"></li>
+		<div class="container">	
+			<ul class="portfolio_lista rslides_portfolio">
+				<li>
+					<div class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicileta Retrô"></div>
+					<div class="grid-8" ><img src="img/portfolio/passeio.jpg" alt="Bicileta Passeio"></div>
+					<div class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicileta Esporte"></div>
+				</li>
+
+				<li>
+					<div class="grid-8" ><img src="img/portfolio/passeio.jpg" alt="Bicileta Passeio"></div>
+					<div class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicileta Retrô"></div>				
+					<div class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicileta Esporte"></div>
+				</li>
+
 			</ul>
 		</div>			
 	</section>
@@ -121,5 +147,10 @@
 
 <!-- END FOOTER -->
 
+<!-- JQUERY / JAVASCRIPT -->
+	<script src="js/libs/jquery-1.11.2.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+<!-- END JQUERY / JAVASCRIPT -->
 </body>
 </html>

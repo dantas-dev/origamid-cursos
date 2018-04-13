@@ -21,3 +21,53 @@
 	float: right;
 	font-style: normal;
 }
+
+/* Plugin do Slide */
+.rslides, .rslides_portfolio {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.rslides li, .rslides_portfolio li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.rslides li:first-child, .rslides_portfolio li:first-child   {
+  position: relative;
+  display: block;
+  float: left;
+}
+.rslides img, .rslides_portfolio img {
+  display: block;
+  height: auto;  
+  width: 100%;
+  border: 0;
+}
+.rslides_tabs{
+  text-align: center;
+  margin-top: 14px;
+}
+.rslides_tabs li{
+  display: inline;
+  margin: 0px 5px;
+}
+.rslides_tabs li a{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #1d1d1d;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: -200px;
+}
+.rslides_tabs li.rslides_here a:hover, .rslides_tabs li.rslides_here a{
+  background: #fec63e;
+  color: #fec63e;
+}

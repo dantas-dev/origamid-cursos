@@ -7,7 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">	
-	<link rel="stylesheet" type="text/css" href="css/responsivo.css">	
+	<link rel="stylesheet" type="text/css" href="css/responsivo.css">		
+	<script type="text/javascript" src="js/libs/modernizr.custom.45655.js"></script>
 </head>
 <body>
 
@@ -49,7 +50,7 @@
 
 <!-- PRODUCTS -->
 
-	<section class="produtos container">
+	<section class="produtos container animar">
 		<h2 class="subtitulo">Produtos</h2>
 		<ul class="produtos_lista">
 
@@ -93,11 +94,11 @@
 	<section class="portfolio">
 		<div class="container">
 			<h2 class="subtitulo">Portfólio</h2>
-			<ul class="portfolio_lista">
-				<li class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicileta Retrô"></li>
-				<li class="grid-8" ><img src="img/portfolio/passeio.jpg" alt="Bicileta Passeio"></li>
-				<li class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicileta Esporte"></li>
-			</ul>
+			<div class="portfolio_lista">
+				<div class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicileta Retrô"></div>
+				<div class="grid-8" ><img src="img/portfolio/passeio.jpg" alt="Bicileta Passeio"></div>
+				<div class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicileta Esporte"></div>
+			</div>
 			<div class="call">
 			<p>Conheça mais o nosso portfólio</p>
 			<a href="portfolio.html" class="btn">Portfólio</a>
@@ -188,5 +189,10 @@
 
 <!-- END FOOTER -->
 
+<!-- JQUERY / JAVASCRIPT -->
+	<script src="js/libs/jquery-1.11.2.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+<!-- END JQUERY / JAVASCRIPT -->
 </body>
 </html>
