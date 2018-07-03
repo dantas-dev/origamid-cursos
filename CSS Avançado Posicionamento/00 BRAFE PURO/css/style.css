@@ -1,447 +1,326 @@
-/*-----------------------
- Reset 
------------------------*/
-body,h1,h2,h3,p,ul{
-	padding: 0px;
-	margin: 0px;
+/* Reset */
+body, h1, h2, h3, p, ul{
+  padding: 0px;
+  margin: 0px;
 }
 body{
-	font-family: Georgia, serif;
-	color: #252525;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #252525;
 }
-*{
-	box-sizing: border-box;	
+* {
+  box-sizing: border-box; /* mantem o width definido sem adicionar mais a ele */
 }
-/*-----------------------
- Menu - HEADER
------------------------*/
+/* Menu */
 .menu{
-	background: #252525; 
-	padding: 20px 0;
+  background: #252525;
+  padding: 20px 0px;
 }
-.menu-container{	
-	max-width: 960px;
-	margin: 0px auto;
+.menu-container{
+  max-width: 960px;
+  margin: 0px auto;
 }
-/* clearfix */
-.menu-container::after, .menu-container::before{
-	content: '';
-	display: table;
-	clear: both;
+.menu-container::after, .menu-container::before{ 
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 .menu-logo{
-	display: block;
-	float: left;
-	margin-left: 10px;
+  display: block;
+  float: left;
+  margin-left: 10px;
 }
 .menu-nav{
-	float: right;
-	margin-right: 10px;
+  float: right;
+  margin-right: 10px;
 }
 .menu-nav li{
-	display: inline-block;
+  display: inline-block;
 }
 .menu-nav a{
-	display: block;
-	padding: 10px;	
-	text-decoration: none;
-	color: #fff;
-
-	/* cal 'em' =
-		px / pxBase = result 
-		example: 
-		18px / 16px = 1.125em
-	*/
-	font-size: 1.125em; /* 18px */
-}
-@media (max-width: 739px){
-	.menu-nav{
-		float: none;
-		clear: both;
-	}
-	.menu{
-		text-align: center;
-	}
-	.menu-logo{
-		float: none;
-		margin: 0px auto;
-	}
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.125em; /* 18(fonte)/16(base) = 1.125 */
 }
 
-/*-----------------------
- Indrodução - MAIN
------------------------*/
+/* Intro */
 .intro{
-	background: url('../img/bg-intro.jpg') 
-	no-repeat 
-	center center;
-	background-size: cover;
-	padding: 150px 0px;
-	text-align: center;
-	color: #fff;
+  background: url('../img/bg-intro.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 150px 0px;
+  text-align: center;
+  color:#fff;
 }
 .intro h1{
-	text-transform: uppercase;
-	font-size: 3em;  /* 48px */
+  text-transform: uppercase;
+  font-size: 3em; /* 48px */
 }
 .intro h1::after{
-	content: '';
-	display: block;
-	width: 20px;
-	height: 4px;
-	background: #fff;
-	margin: 10px auto;
+  content: '';
+  display: block;
+  width: 20px;
+  height: 4px;
+  background: #fff;
+  margin: 10px auto;
 }
 .intro p{
-	font-style: italic;
-	font-size: 1.125em; /* 18px */
-}
-@media (max-width: 739px){
-	.intro{
-		padding: 60px 0px;
-	}
+  font-style: italic;
+  font-size: 1.125em; /* 18px */
 }
 
-/*-----------------------
- Sobre - ABOUT
------------------------*/
+/* Sobre */
 .sobre{
-	padding: 60px 0px;
+  padding: 60px 0px;
 }
 .sobre-container{
-	max-width: 960px;
-	margin: 0 auto;	
+  max-width: 960px;
+  margin: 0 auto;
 }
-/* clearfix */
-.sobre-container::after , .sobre-container::before{
-	content: '';
-	display: table;
-	clear: both;
+.sobre-container::after, .sobre-container::before{
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 .sobre h2{
-	text-align: center;
-	font-size: 2.25em; /* 36px */
-	margin-bottom: 60px;
+  text-align: center;
+  font-size: 2.25em; /* 36px */
+  margin-bottom: 60px;
 }
 .sobre-item{
-	width: 460px;
-	float: left;
-	margin:  0px 10px;
+  width: 460px;
+  float: left;
+  margin: 0px 10px 0px 10px;
 }
 .sobre-item img{
-	display: block;
-	max-width: 100%;
+  /* por padrao a tag <img> tem cerca de 2px a mais que envolve a imagem, usando o display block, corrigimos isso */
+  display: block;
+  max-width: 100%; /* da uma certa responsividade para a img */
 }
 .sobre-item h3{
-	font-size: 2.25em; /* 36px */
-	line-height: 1em;
-	background: #252525;
-	width: 220px;
-	color: #fff;
-	font-style: italic;
-	font-weight: normal;
-	text-align: center;
-	padding: 5px 0px 10px 0px;
-	top: -25px;
-	position: relative;
+  font-size: 2.25em; /* 36px */
+  line-height: 1em;
+  background: #252525;
+  width: 220px;
+  color: #fff;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+  padding: 5px 0px 10px 0px;
+  /* posicionar sobre a img para dar efeito */
+  top: -25px;
+  position: relative;
 }
-.sobre > p{
-	font-size: 1.125em; /* 18px */
-	line-height: 1.4em;
-	font-style: italic;
-	text-align: center;
-	margin: 20px auto;
-	max-width: 460px;
- }
-@media (min-width: 740px) and (max-width: 980px){
-	.sobre-container{
-		max-width: 720px;
-	}
-	.sobre-item{
-		width: 340px;
-	}
+.sobre > p{ /* apenas alterar o P que esta diretamente apos o .sobre */
+  font-size: 1.25em; /* 20px */
+  line-height: 1.4em;
+  font-style: italic;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 460px;
 }
-@media (max-width: 739px){
-	.sobre-container{
-		max-width: 300px;
-	}
-	.sobre-item{
-		width: 300px;
-		margin: 0px auto;
-	}
-}
-/*-----------------------
- Produtos - PRODUCTS
------------------------*/
+
+/* Produtos */
 .produtos{
-	background: #e7e4d8;
-	padding: 60px 0;
-	border-top: 3px solid #d6d3c8;
-	border-bottom: 3px solid #d6d3c8;
+  background: #e7e4d8;
+  padding: 60px 0px;
+  border-top: 3px solid #d6d3c8;
+  border-bottom: 3px solid #d6d3c8;
 }
 .produtos-container{
-	max-width: 960px;
-	margin: 0px auto;
+  max-width: 960px;
+  margin: 0px auto;
 }
-/*clearfix*/
-.produtos-container::before, .produtos-container::after{
-	content: '';
-	display: table;
-	clear: both;
+.produtos-container::after, .produtos-container::before{
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 .produtos-item{
-	width: 300px;
-	float: left;
-	margin: 0px 10px 20px 10px;
+  width: 300px;
+  float: left;
+  margin: 0px 10px 20px 10px;
 }
 .produtos-item h2{
-	text-align: center;
-	font-size: 2.25em; /* 36px */
-	margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.25em; /* 36px */
+  margin-bottom: 20px;
 }
-/* icons - icones */
 .produtos-item h2::before{
-	content: '';
-	display: block;
-	width: 100px;
-	height: 100px;
-	background: currentColor;
-	border-radius: 50%;
-	margin: 20px auto;
-	border: 5px solid #e7e4d8;
-	box-shadow: 0px 0px 0px 10px currentColor;
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: currentColor;
+  border-radius: 50%;
+  margin: 20px auto;
+  border: 5px solid #e7e4d8;
+  box-shadow: 0px 0px 0px 10px currentColor;
 }
 h2.produtos-paulista::before{
-	color: #492901;
+  color: #492901;
 }
 h2.produtos-carioca::before{
-	color: #c17139;
+  color: #c17139;
 }
 h2.produtos-mineiro::before{
-	color: #d7a54d;
+  color: #d7a54d;
 }
 .produtos-item p{
-	font-size: 0.875em; /* 14px */
-	line-height: 1.4em;
+  font-size: 0.875em; /* 14px */
+  line-height: 1.4em;
 }
 .produtos-btn{
-	width: 180px;
-	border: 3px solid #252525;
-	color: #252525;
-	text-decoration: none;
-	display: block;
-	font-size: 1.125em; /* 18px */
-	font-weight: bold;
-	text-transform: uppercase;
-	text-align: center;
-	padding: 15px 0px;
-	margin: 20px auto 0px auto;
+  width: 180px;
+  border: 3px solid;
+  color: #252525;
+  text-decoration: none;
+  display: block;
+  font-size: 1.125em; /* 18px */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 15px 0px;
+  margin: 20px auto 0px auto;
 }
-@media (min-width: 740px) and (max-width: 980px){
-	.produtos-container{
-		max-width: 720px;
-	}
-	.produtos-item{
-		width: 220px;
-	}
+.produtos-btn:hover{
+  color: #fff;
+  border: 3px solid #252525;
+  background: #403f3f;
 }
-@media (max-width: 739px){
-	.produtos-container{
-		max-width: 300px;
-	}
-	.produtos-item{		
-		margin: 10px auto 20px auto;
-	}
-}
-/*-----------------------
- Locais - PLACES
------------------------*/
+
+/* locais */
 .locais{
-	max-width: 960px;
-	margin: 0px auto;	
+  max-width: 960px;
+  margin: 0px auto;
+  padding: 20px 0px;
 }
 .locais-item{
-	clear: both;
-	margin: 60px auto;
+  clear: both;/* resolver problema do float */
+  margin: 60px auto;
 }
-/*clearfix*/
-.locais-item::before , .locais-item::after{
-	content: '';
-	display: table;
-	clear: both;
+.locais-item::before, .locais-item::after{
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 .locais-item img{
-	width: 460px;
-	display: block;
-	float: left;
-	margin: 0px 10px;
+  width: 460px;
+  float: left;
+  display: block; /* para tirar os 2px a mais que envolve por padrao uma tag img */
+  margin: 0px 10px;
 }
 .locais-item > div{
-	width: 460px;
-	float: left;
-	margin: 0px 10px;
+  width: 460px;
+  float: left;
+  margin: 0px 10px;
 }
 .locais-item h2{
-	font-size: 2.25em; /* 36px */
-	margin-bottom: 20px;
+  font-size: 2.25em; /* 36px */
+  margin-bottom: 20px;
 }
 .locais-item p{
-	font-size: 1.125em; /* 18px */
-	line-height: 1.44em;
-	max-width: 320px;
-	margin-bottom: 40px;
+  font-size:  1.125em; /* 18px */
+  line-height: 1.4em;
+  max-width: 320px;
+  margin-bottom: 40px;
 }
 .locais-item a{
-	font-size: 1.125em; /* 18px */
-	text-transform: uppercase;
-	text-decoration: none;
-	border: 3px solid;
-	color: #252525;
-	padding: 10px 20px;
+  font-size: 1.125em; /* 18px */
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 3px solid;
+  color: #252525;
+  padding: 10px 20px;
 }
-@media (min-width: 740px) and (max-width: 980px){
-	.locais{
-		max-width: 720px;
-	}
-	.locais-item > div , .locais-item img{
-		width: 340px;
-	}
+.locais-item a:hover{
+  color: #fff;
+  border: 3px solid #252525;
+  background: #403f3f;
 }
-@media (max-width: 739px){
-	.locais{
-		max-width: 300px;
-	}
-	.locais-item > div , .locais-item img{
-		width: 300px;
-		margin: 0px;
-	}
-}
-/*-----------------------
- Assine - NEWSLETTER
------------------------*/
+/* assine */
 .assine{
-	background: #e7e4d8;
-	padding: 30px 0px;
+  background: #e7e4e7;
+  padding: 30px 0px;
 }
 .assine-container{
-	max-width: 960px;
-	margin: 0px auto;
+  max-width: 960px;
+  margin: 0px auto;
 }
-.assine-container::after , .assine-container::before{
-	content: '';
-	display: table;
-	clear: both;
+.assine-container::after, .assine-container::before{
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 .assine-info{
-	width: 460px;
-	margin: 0px 10px;
-	float: left;
+  width: 460px;
+  margin: 0px 10px;
+  float: left;
 }
 .assine-info h2{
-	font-size: 2.25em; /* 36px */
+  font-size: 2.25em; /* 36px */
 }
 .assine-info p{
-	font-size: 1.5em; /* 24px */
-	font-style: italic;
+  font-size: 1.5em; /* 24px */
+  font-style: italic;
 }
 .assine form{
-	width: 460px;
-	margin: 10px 10px 0px 10px;
-	float: left;
+  width: 460px;
+  margin: 10px 10px 0px 10px;
+  float: left;
 }
 .assine form label{
-	display: none;
+  display: none; /* retirar da tela */
 }
 .assine input{
-	width: 320px;
-	border: 3px solid #252525;
-	background: none;
-	font-size: 1.5em; /* 24px */
-	font-style: italic;
-	font-family: Georgia, serif;
-	padding: 10px;
-	float: left;
+  width: 320px;
+  border: 3px solid #252525;
+  background: none;
+  font-size: 1.5em; /* 24px */
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* tag form nao pega a tipografia definida no body */
+  padding: 10px;
+  float: left;
 }
 .assine button{
-	background: #252525;
-	border: none;
-	font-family: Georgia, serif;
-	text-transform: uppercase;
-	font-size: 1.5em; /* 24px */
-	width: 140px;
-	padding: 13px 0px;
-	color: #fff;
-	cursor: pointer;
+  background: #252525;
+  border: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  font-size: 1.5em; /* 24px */
+  width: 140px;
+  padding: 13px 0px;
+  color: #fff;
+  cursor: pointer;
 }
-@media (min-width: 740px) and (max-width: 980px){
-	.assine-container{
-		max-width: 720px;
-	}
-	.assine-info, .assine form , .assine input{
-		width: 340px;
-	}	
-}
-@media (max-width: 739px){
-	.assine-container{
-		max-width: 300px;
-	}
-	.assine-info, .assine form , .assine input{
-		width: 300px;
-		margin: 10px 0px 0px 0px;
-	}
-	.assine button{
-		width: 300px;
-	}
-}
-/*-----------------------
- Rodapé - FOOTER
------------------------*/
+/* footer */
 .footer{
-	background: #d6d3c8;
-	padding: 40px 0px;
+  background: #d6d3c8;
+  padding: 40px 0px;
 }
 .footer-container{
-	max-width: 960px;
-	margin: 0px auto;
+  max-width: 960px;
+  margin: 0px auto;
 }
-.footer-container::after, .food-container::before{
-	content: '';
-	display: table;
-	clear: both;
+.footer-container::after, .footer-container::before{
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 .footer p{
-	float: left;
-	margin: 0px 10px;
-	font-size: 1.125em; /* 18px */
-	line-height: 1.4em;
+  float: left;
+  margin: 0px 10px;
+  font-size: 1.125em; /* 18px */
+  line-height: 1.4em;
 }
 .footer img{
-	float: right;
-	margin: 0px 10px;
-	display: block;
+  float: right;
+  margin: 0px 10px;
+  display: block;
 }
-@media (max-width: 739px){
-	.footer-container{
-		max-width: 300px;
-	}
-	.footer p{
-		float: none;
-		margin: 0px;
-	}
-	.footer img{
-		float: none;
-		margin: 10px 0px;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
