@@ -1,2 +1,4 @@
 # OrigamidCursos
-Projetos feitos no curso da origamid | Projects made in the course origamid
+Projetos feitos no curso da origamid | Designs made in the origamid course
+
+https://www.origamid.com/cursos/
