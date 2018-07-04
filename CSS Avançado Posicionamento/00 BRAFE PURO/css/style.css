@@ -1,3 +1,11 @@
+/* 
+  * Responsivo - Breakpoints:
+  * acima de 960
+  * entre 740 e 960
+  * abaixo de 739
+  obs: 'only screen' significa que eu só quero essa quebra para tela do dispositivo, e não para impressões por exemplo
+*/
+
 /* Reset */
 body, h1, h2, h3, p, ul{
   padding: 0px;
@@ -44,6 +52,21 @@ body{
   color: #fff;
   font-size: 1.125em; /* 18(fonte)/16(base) = 1.125 */
 }
+/* Responsivo - Menu */
+@media (max-width: 739px){
+  .menu-logo{
+    display: block;
+    float: none; /* para poder o text-align funcionar */
+    margin: 0px;
+  }
+  .menu{
+    text-align: center; /* centralizar os itens do menu */
+  }
+  .menu-nav{
+    float: none; /* tirei o float */
+    clear: both; /* limpar a flutuação */
+  }
+}
 
 /* Intro */
 .intro{
@@ -68,6 +91,13 @@ body{
 .intro p{
   font-style: italic;
   font-size: 1.125em; /* 18px */
+}
+
+/* Responsivo - Intro */
+@media (max-width: 739px){
+  .intro{
+    padding: 60px 0px;
+  }
 }
 
 /* Sobre */
@@ -120,6 +150,26 @@ body{
   text-align: center;
   margin: 20px auto;
   max-width: 460px;
+}
+
+/* Responsivo - Sobre */
+/* 980px pq a barra padrão de scroll tem cerca de 20px */
+@media (min-width: 740px) and (max-width: 980px){ /* tablet */
+  .sobre-container{ /* 740px(da quebra) - 20px(scroll) = 720px */
+    max-width: 720px;
+  }
+  .sobre-item{
+    width: 340px; /* (720px / 2) - 20px(margin) = 340px  */
+  }
+}
+@media (max-width: 739px){ /* mobile */
+  .sobre-container{
+    max-width: 300px;
+  }
+  .sobre-item{
+    width: 300px;
+    margin: 0px; /* necessario tirar a margin para o item caber no container corretamente */
+  }
 }
 
 /* Produtos */
@@ -192,6 +242,26 @@ h2.produtos-mineiro::before{
   background: #403f3f;
 }
 
+/* Responsivo - Produtos */
+/* 980px pq a barra padrão de scroll tem cerca de 20px */
+@media (min-width: 740px) and (max-width: 980px){ /* tablet */
+  .produtos-container{
+    max-width: 720px;
+  }
+  .produtos-item{
+    width: 220px; /* (720px / 3) - 20px(margin) */
+  }
+}
+@media (max-width: 739px){ /* mobile */
+  .produtos-container{
+    max-width: 300px;
+  }
+  .produtos-item{
+    /* width: 300px; nao e necessario redefinir, pois por padrao os .produtos-item já tem 300px */
+    margin: 0px auto 20px auto; /* apenas preciso redifinir as margens no mobile */
+  }
+}
+
 /* locais */
 .locais{
   max-width: 960px;
@@ -242,6 +312,27 @@ h2.produtos-mineiro::before{
   border: 3px solid #252525;
   background: #403f3f;
 }
+
+/* Responsivo - Locais */
+/* 980px pq a barra padrão de scroll tem cerca de 20px */
+@media (min-width: 740px) and (max-width: 980px){ /* tablet */
+  .locais{
+    max-width: 720px;
+  }
+  .locais-item > div, .locais-item img{
+    width: 340px; /* (720px / 2) - 20px */
+  }
+}
+@media (max-width: 739px){ /* mobile */
+  .locais{
+    max-width: 300px;
+  }
+  .locais-item > div, .locais-item img{
+    width: 300px;
+    margin: 0px
+  }
+}
+
 /* assine */
 .assine{
   background: #e7e4e7;
@@ -298,6 +389,30 @@ h2.produtos-mineiro::before{
   color: #fff;
   cursor: pointer;
 }
+
+/* Responsivo - Assine */
+/* 980px pq a barra padrão de scroll tem cerca de 20px */
+@media (min-width: 740px) and (max-width: 980px){ /* tablet */
+  .assine-container{
+    max-width: 720px;
+  }
+  .assine-info , .assine form, .assine input, .assine button{
+    width: 340px;
+  }
+}
+@media (max-width: 739px){ /* mobile */
+  .assine-container{
+    max-width: 300px;
+  }
+  .assine-info, .assine form, .assine input{
+    width: 300px;
+    margin: 10px 0px 0px 0px;
+  }
+  .assine button{
+    width: 300px;
+  }
+}
+
 /* footer */
 .footer{
   background: #d6d3c8;
@@ -323,4 +438,19 @@ h2.produtos-mineiro::before{
   float: right;
   margin: 0px 10px;
   display: block;
+}
+
+/* Responsivo - Footer */
+@media (max-width: 739px){ /* mobile */
+  .footer-container{
+    max-width: 300px;
+  }
+  .footer p{
+    float: none;
+    margin: 0px;
+  }
+  .footer img{
+    float: none;
+    margin: 40px 0px;
+  }
 }
