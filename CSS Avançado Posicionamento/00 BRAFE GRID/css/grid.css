@@ -1,0 +1,69 @@
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+}
+.container::after, .container::before{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* grids(colunas) */
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12{
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  display: block;
+  min-height: 1px;
+}
+/* -20px = margin left e right */
+.grid-1{
+  width: calc(8.333% - 20px); /* (100% / 12(colunas)) = 8.333% */
+}
+.grid-2{
+  width: calc(16.666% -20px); /* 8.333% * 2 */
+}
+.grid-3{
+  width: calc(25% - 20px); /* 8.333% * 3 */
+}
+.grid-4{
+  width: calc(33.333% - 20px); /* 8.333% * 4 */
+}
+.grid-5{
+  width: calc(41.666% - 20px); /* 8.333% * 5 */
+}
+.grid-6{
+  width: calc(50% - 20px); /* 8.333% * 6 */
+}
+.grid-7{
+  width: calc(58.333% - 20px); /* 8.333% * 7 */
+}
+.grid-8{
+  widows: calc(66.666% - 20px); /* 8.333% * 8 */
+}
+.grid-9{
+  width: calc(75% - 20px); /* 8.333% * 9 */
+}
+.grid-10{
+  width: calc(83.333% - 20px); /* 8.333% * 10 */
+}
+.grid-11{
+  width: calc(91.666% - 20px); /* 8.333% * 11 */
+}
+.grid-12{
+  width: calc(100% - 20px); /* 8.333% * 12 */
+}
+
+/* responsivo */
+@media only screen and (max-width: 739px){
+  .container{
+    max-width: 300px;
+  }
+
+  .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12{
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    float: none;
+  }
+}

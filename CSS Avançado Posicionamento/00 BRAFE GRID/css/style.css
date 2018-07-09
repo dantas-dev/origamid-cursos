@@ -1,0 +1,276 @@
+/* Reset */
+
+body, h1, h2, h3, p, ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: Georgia, serif;
+	color: #252525;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+img{
+	max-width: 100%;
+	display: block;
+}
+
+/* Menu */
+
+.menu {
+	background: #252525;
+	padding: 15px 0;
+}
+.menu-nav ul{
+	float: right;
+}
+.menu-nav ul li{
+	display: inline-block;
+}
+.menu-nav a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.125em;
+	display: block;
+	padding: 10px;
+	margin-left: 10px;
+}
+/* responsivo */
+@media only screen and (max-width: 739px){
+	.menu-logo img{
+		margin: 0 auto;
+	}
+	.menu-nav ul{
+		float: none;
+	}
+	.menu-nav ul li a{
+		margin-left: 0px;
+		padding-left: 0px;
+		padding-right: 8px;
+	}
+}
+
+/* Intro */
+
+.intro {
+	background: url('../img/bg-intro.jpg') no-repeat center center;
+	background-size: cover;
+	color: #fff;
+	padding: 150px 0;
+	text-align: center;
+}
+
+.intro h1 {
+	text-transform: uppercase;
+	font-size: 3em;
+}
+
+.intro h1::after {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 4px;
+	background: #fff;
+	margin: 10px auto;
+}
+
+.intro p {
+	font-style: italic;
+	font-size: 1.125em;
+}
+/* responsivo */
+@media only screen and (max-width: 739px){
+	.intro{
+		padding: 60px 0;
+	}
+}
+
+/* Sobre */
+.sobre{
+	padding: 60px 0;
+}
+
+.sobre h2 {
+	font-size: 2.25em;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.sobre-item h3 {
+	font-size: 2.25em;
+	line-height: 1em;
+	background: #252525;
+	color: #fff;
+	font-style: italic;
+	font-weight: normal;
+	text-align: center;
+	position: relative;
+	width: 220px;
+	padding: 5px 0 10px 0;
+	top: -25px;
+}
+
+.sobre > p {
+	font-size: 1.125em;
+	line-height: 1.4em;
+	font-style: italic;
+	max-width: 460px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+/* Produtos */
+.produtos {
+	background: #e7e4d8;
+	border-top: 3px solid #d6d3c8;
+	border-bottom: 3px solid #d6d3c8;
+	padding: 60px 0;
+}
+.produtos-item{
+	margin-bottom: 40px;
+}
+.produtos-item h2 {
+	font-size: 2.25em;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.produtos-item h2::before {
+	content: '';
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: currentColor;
+	border-radius: 50%;
+	border: 5px solid #e7e4d8;
+	box-shadow: 0 0 0 5px currentColor;
+	margin: 20px auto;
+}
+
+h2.produtos-paulista::before {
+	color: #492901;
+}
+
+h2.produtos-carioca::before {
+	color: #c17139;
+}
+
+h2.produtos-mineiro::before {
+	color: #d7a54d;
+}
+
+.produtos-item p {
+	font-size: 0.875em;
+	line-height: 1.4em;
+}
+
+.produtos-btn {
+	border: 3px solid #252525;
+	color: #252525;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.125em;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	width: 180px;
+	padding: 15px 0;
+	margin: 0 auto;
+}
+
+/* Locais */
+.locais{
+	padding: 60px 0;
+}
+.locais-item{
+	margin-bottom: 40px;
+}
+.locais-item h2 {
+	font-size: 2.25em;
+	margin-bottom: 20px;
+}
+
+.locais-item p {
+	font-size: 1.125em;
+	line-height: 1.4em;
+	max-width: 320px;
+	margin-bottom: 40px;
+}
+
+.locais-item a {
+	font-size: 1.125em;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 3px solid;
+	color: #252525;
+	padding: 10px 20px;
+}
+
+/* Assine */
+
+.assine {
+	background: #e7e4d8;
+	padding: 30px 0;
+}
+
+.assine-info h2 {
+	font-size: 2.25em;
+}
+
+.assine-info p {
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.assine form label {
+	display: none;
+}
+
+.assine input {
+	border: 3px solid #252525;
+	background: none;
+	font-size: 1.5em;
+	font-style: italic;
+	font-family: Georgia, serif;
+	width: calc(100% - 140px);
+	padding: 10px;
+	float: left;
+}
+
+.assine button {
+	background: #252525;
+	border: none;
+	font-family: Georgia, serif;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	color: #fff;
+	cursor: pointer;
+	width: 140px;
+	padding: 13px 0;
+}
+
+/*Footer*/
+
+.footer {
+	background: #d6d3c8;
+	padding: 40px 0;
+}
+.footer img{
+	float: right;
+}
+.footer p {
+	font-size: 1.125em;
+	line-height: 1.4em;
+}
+
+/* responsivo */
+@media only screen and (max-width: 739px){
+	.footer img{
+		float: none;
+		margin: 20px auto 0 auto;
+	}
+}
