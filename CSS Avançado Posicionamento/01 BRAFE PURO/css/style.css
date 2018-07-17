@@ -1,0 +1,142 @@
+/* reset */
+body, p, h1, h2, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #252525;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Menu */
+.header-informacoes {
+  font-size: 0.875; /* 14px */
+  background: #d6d3c8;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.header-logo img {
+  display: block;
+  margin: 40px auto; 
+}
+
+.header-menu {
+  border-top: 3px solid #d6d3c8;
+  border-bottom: 3px solid #d6d3c8;
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.header-menu ul li {
+  display: inline-block;
+}
+
+.header-menu ul li a {
+  display: block;
+  padding: 5px 10px 5px 0;
+  text-decoration: none;
+  color: #252525;
+  font-size: 1.125em; /* 18px */
+}
+
+.header-menu ul li a:hover {
+  color: #000;
+}
+
+.header-menu ul li a::before {
+  content: '•';
+  padding-right: 10px;
+}
+
+.header-menu ul li:first-child a::before {
+  content: '';
+}
+
+/* Conteudo */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Filtro */
+.filtro {
+  background: #e7e4d8;
+  border: 3px solid #d6d3c8;
+  width: 300px;
+  margin: 0 10px;
+  padding: 20px;
+  float: left;
+}
+
+.filtro h2 {
+  font-size: 1.125em; /* 18px */
+  padding: 10px 0;
+}
+
+.filtro ul {
+  border-top: 3px solid #c0beb4;
+  border-bottom: 3px solid #c0beb4;
+  padding: 10px 0;
+}
+
+.filtro li {
+  font-style: italic;
+  font-size: 1.125em; /* 18px */
+  line-height: 2;
+}
+
+.filtro li::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #c0beb4;
+  float: right;
+  margin-top: 5px;
+}
+
+.sabor {
+  overflow: hidden;
+}
+
+.sabor span {
+  text-indent: -200px; /* sumir o texto */
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  vertical-align: middle; /* alinhar ao centro verticalmente */
+  background: currentColor;
+}
+
+.sabor-3{
+  color: #492901;
+  box-shadow: 20px 0 0 0,
+              40px 0 0 0;
+}
+
+.sabor-4{
+  color: #c17139;
+  box-shadow: 20px 0 0 0,
+              40px 0 0 0,
+              60px 0 0 0;
+}
+
+.sabor-5{
+  color: #c7a54d;
+  box-shadow: 20px 0 0 0,
+              40px 0 0 0,
+              60px 0 0 0,
+              80px 0 0 0;
+}
