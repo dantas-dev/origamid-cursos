@@ -1,0 +1,186 @@
+body, p, h1, h2, ul, li {
+	margin: 0px;
+	padding: 0px;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: Georgia, serif;
+	color: #252525;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* MENU */
+
+.header-informacoes {
+	font-size: 0.875em;
+	background: #d6d3c8;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.header-logo img {
+	display: block;
+	margin: 40px auto;
+}
+
+.header-menu {
+	border-top: 3px solid #d6d3c8;
+	border-bottom: 3px solid #d6d3c8;
+	text-align: center;
+	margin-bottom: 40px;
+	padding: 20px 0;
+}
+
+.header-menu li {
+	display: inline-block;
+}
+
+.header-menu li a {
+	display: block;
+	padding: 5px 10px 5px 0;
+	text-decoration: none;
+	color: #252525;
+	font-size: 1.125em;
+}
+
+.header-menu li a::before {
+	content: '•';
+	padding-right: 10px;
+}
+
+.header-menu li:first-child a::before {
+	content: '';
+}
+
+/* FILTRO */
+
+.filtro {
+	background: #e7e4d8;
+	border: 3px solid #d6d3c8;
+	padding: 20px;
+	align-self: flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+	.filtro { 
+		display: none;
+	}
+}
+
+.filtro h2 {
+	font-size: 1.125em;
+	padding: 10px 0;
+	font-weight: bold;
+}
+
+.filtro ul {
+	border-top: 3px solid #c0beb4;
+	border-bottom: 3px solid #c0beb4;
+	padding: 10px 0;
+}
+
+.filtro li {
+	font-style: italic;
+	font-size: 1.125em;
+	line-height: 2;
+}
+
+.filtro li::after {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 3px solid #c0beb4;
+	float: right;
+	margin-top: 5px;
+}
+
+.sabor {
+	overflow: hidden;
+}
+
+.sabor span {
+	text-indent: -200px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: currentColor;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.sabor-3 {
+	color: #492901;
+	box-shadow: 20px 0 0 0 currentColor,
+							40px 0 0 0 currentColor;
+}
+
+.sabor-4 {
+	color: #c17139;
+	box-shadow: 20px 0 0 0 currentColor,
+							40px 0 0 0 currentColor,
+							60px 0 0 0 currentColor;
+}
+
+.sabor-5 {
+	color: #d7a54d;
+	box-shadow: 20px 0 0 0 currentColor,
+							40px 0 0 0 currentColor,
+							60px 0 0 0 currentColor,
+							80px 0 0 0 currentColor;
+}
+
+/*PRODUTOS*/
+
+.produtos h1 {
+	font-size: 3em;
+	font-weight: normal;
+}
+
+.produtos li img {
+	display: block;
+	max-width: 100%;
+	border: 3px solid #fff;
+	box-shadow: 0 0 0 3px #252525;
+	margin: 40px 3px 0 3px;
+}
+
+.produtos li span {
+	background: #e7e4d8;
+	padding: 10px;
+	font-size: 0.875em;
+	font-weight: bold;
+	position: relative;
+	top: -15px;;
+}
+
+.produtos li h2 {
+	font-size: 0.875em;
+	font-weight: normal;
+}
+
+.footer {
+	background: #e7e4d8;
+	text-align: center;
+	padding: 60px 0;
+	font-size: 1.125em;
+	line-height: 1.4em;
+	margin-top: 80px;
+}
+
+
+
+
+
+
+
+
+
+

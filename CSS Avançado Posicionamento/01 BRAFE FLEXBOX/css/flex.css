@@ -1,0 +1,49 @@
+/* grid flexbox */
+.flex {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  margin-left: -10px;
+  margin-right: -10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-4, .flex-item-6, .flex-item-8 {
+  margin-left: 10px;
+  margin-right: 10px;
+  align-self: flex-start;
+}
+
+.flex-item-4 {
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+}
+
+.flex-item-6 {
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+}
+
+.flex-item-8 {
+  flex: 0 0 calc(66.666% - 20px);
+  max-width: calc(66.666% - 20px);
+}
+
+@media only screen and (max-width: 739px) {
+  .flex {
+    max-width: 300px;
+    flex-direction: column;
+  }
+
+  .flex-item-4, .flex-item-8 {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    align-self: auto;
+  }
+}
