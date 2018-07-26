@@ -1,0 +1,152 @@
+<style>
+  /* FLEX BASIS AUTO */
+
+.basis-auto {
+	flex: 1 1 auto;
+}
+
+.basis-auto-grow-2 {
+	flex: 2 1 auto;
+}
+
+.basis-auto-width {
+	flex: 1 1 auto;
+	width: 60px;
+}
+
+.basis-auto-grow-0 {
+	flex: 0 1 auto;
+}
+
+/* FLEX BASIS AUTO FIM */
+
+/* FLEX BASIS 0 */
+
+.basis-0 {
+	flex: 1;
+}
+
+/* O tamanho total é de duas vezes dos itens com flex: 1; */
+.basis-0-grow-2 {
+	flex: 2;
+}
+
+.basis-0-width {
+	flex: 1;
+	width: 120px;
+	min-width: 80px;
+}
+
+.basis-0-grow-0 {
+	flex: 0 1 0;
+}
+
+/* FLEX BASIS 0 FIM */
+
+.basis-numero-container {
+	flex-wrap: wrap;
+}
+
+.basis-110 {
+	flex: 0 1 110px;
+}
+
+.basis-300 {
+	flex: 0 1 300px;
+}
+
+.basis-110-porcento {
+	flex: 0 1 calc(25% - 10px);
+}
+
+.basis-110-grow-1 {
+	flex: 1 1 110px;
+}
+
+.basis-600-grow-1 {
+	flex: 1 1 600px;
+}
+
+/* ESTILOS GERAIS */
+
+.item {
+	margin: 5px;
+	background: #89609E;
+	text-align: center;
+	font-size: 1.5em;
+	position: relative;
+}
+
+/* Flex Container */
+.container {
+	max-width: 400px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+
+/* Flex Item */
+img {
+	display: block;
+	max-width: 100%;
+	margin: 10px auto;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+</style>
+
+<h1>flex: n 1 auto;</h1>
+<section class="container">
+	<div class="item basis-auto">Palavra 1</div>
+	<div class="item basis-auto">2</div>
+	<div class="item basis-auto-grow-2">3</div>
+	<div class="item basis-auto-width">4</div>
+	<div class="item basis-auto-grow-0">5</div>
+</section>
+
+<h1>flex: 1;</h1>
+<section class="container">
+	<div class="item basis-0">Test de Cont</div>
+	<div class="item basis-0">2</div>
+	<div class="item basis-0-grow-2">Palavra</div>
+	<div class="item basis-0-width">4</div>
+	<div class="item basis-0-grow-0">5</div>
+</section>
+
+<h1>flex: flex: 0 1 n;</h1>
+<section class="container basis-numero-container">
+	<div class="item basis-110">1</div>
+	<div class="item basis-110">12</div>
+	<div class="item basis-110">12345678910</div>
+	<div class="item basis-300">1234</div>
+	<div class="item basis-110-porcento">1</div>
+	<div class="item basis-110-porcento">12</div>
+	<div class="item basis-110-porcento">123</div>
+	<div class="item basis-110-porcento">1234</div>
+</section>
+
+<h1>flex: 0 1 n; // Diferente Conteúdo</h1>
+<section class="container basis-numero-container">
+	<div class="item basis-110">Conteúdo Grande</div>
+	<div class="item basis-110">PalavraMaior</div>
+	<div class="item basis-110">Oi</div>
+</section>
+
+<h1>flex: 1 1 n; //</h1>
+<section class="container basis-numero-container">
+	<div class="item basis-110-grow-1">1</div>
+	<div class="item basis-110-grow-1">12</div>
+	<div class="item basis-110-grow-1">1234</div>
+	<div class="item basis-110-grow-1">12345</div>
+	<div class="item basis-600-grow-1">5</div>
+</section>

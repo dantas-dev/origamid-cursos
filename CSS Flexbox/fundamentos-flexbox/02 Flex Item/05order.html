@@ -1,0 +1,91 @@
+<style>
+  .order1 {
+	order: 1;
+}
+
+.order2 {
+	order: 2;
+}
+
+.order3 {
+	order: 3;
+}
+
+.order4 {
+	order: 4;
+}
+
+.order-1 {
+	order: -1;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.item {
+	margin: 5px;
+	padding: 0 5px;
+	background: #89609E;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* Flex Container */
+.container {
+	max-width: 400px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+/* Flex Item */
+
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+</style>
+
+<h1>order: misturados;</h1>
+<section class="container">
+	<div class="item order2">1</div>
+	<div class="item order4">2</div>
+	<div class="item order1">3</div>
+	<div class="item order3">4</div>
+</section>
+
+<h1>order: negativo; / flex-grow</h1>
+<section class="container">
+	<div class="item order2 flex-grow">1</div>
+	<div class="item order-1 flex-grow">2</div>
+	<div class="item order1 flex-grow">3</div>
+	<div class="item order3 flex-grow">4</div>
+</section>
+
+<h1>order: valores iguais; / grow / column</h1>
+<section class="container column">
+	<div class="item order2 flex-grow">1</div>
+	<div class="item order2 flex-grow">2</div>
+	<div class="item order1 flex-grow">3</div>
+	<div class="item order1 flex-grow">4</div>
+</section>
+
+<h1>order: valores iguais; / grow / column</h1>
+<section class="container column">
+	<div class="item flex-grow">1</div>
+	<div class="item order2 flex-grow">2</div>
+	<div class="item flex-grow">3</div>
+	<div class="item order-1 flex-grow">4</div>
+</section>

@@ -1,0 +1,85 @@
+<style>
+  /* Os itens não se expandem para ocupar o container. */
+.grow0 {
+	flex-grow: 0;
+}
+
+/* Os itens se expandem igualmente para ocupar o container. Utilizando apenas o flex-grow, o crescimento é distribuído igualmente antes e depois do conteúdo de cada elemento. (pois por padrão o flex-basis é auto) */
+.grow1 {
+	flex-grow: 1;
+}
+
+/* Os itens se expandem duas vezes mais que aqueles com flex-grow: 1; */
+.grow2 {
+	flex-grow: 2;
+}
+
+.grow3 {
+	flex-grow: 3;
+}
+
+.item {
+	margin: 5px;
+	background: #89609E;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* Flex Container */
+.container {
+	max-width: 400px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+/* Flex Item */
+
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+</style>
+
+<h1>flex-grow: 0;</h1>
+<section class="container">
+	<div class="item grow0">1</div>
+	<div class="item grow0">2</div>
+	<div class="item grow0">3</div>
+</section>
+
+<h1>flex-grow: 1;</h1>
+<section class="container">
+	<div class="item grow1">1</div>
+	<div class="item grow1">2</div>
+	<div class="item grow1">3</div>
+</section>
+
+<h1>flex-grow: 2;</h1>
+<section class="container column">
+	<div class="item grow2">1</div>
+	<div class="item grow2">2</div>
+	<div class="item grow2">3</div>
+</section>
+
+<h1>flex-grow: 1; // conteúdo largo</h1>
+<section class="container column-reverse">
+	<div class="item grow1">1</div>
+	<div class="item grow1">TestandoTestando2</div>
+	<div class="item grow1">3</div>
+</section>
+
+<h1>flex-grow: (misturado);</h1>
+<section class="container column-reverse">
+	<div class="item grow1">1</div>
+	<div class="item grow0">2</div>
+	<div class="item grow2">3</div>
+	<div class="item grow3">4</div>
+</section>
