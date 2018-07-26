@@ -1,0 +1,61 @@
+<style>
+  .row-nowrap {
+	flex-flow: row nowrap;
+}
+.column-nowrap {
+	flex-flow: column nowrap;
+}
+.row-wrap {
+	flex-flow: row wrap;
+}
+
+/* Flex Container */
+.container {
+	max-width: 360px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+/* Flex Item */
+.item {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+	flex: 1;
+	margin: 5px;
+	background: #89609E;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+</style>
+
+<h1>flex-flow: row nowrap;</h1>
+<section class="container row-nowrap">
+	<div class="item">TesteDoItem1</div>
+	<div class="item">TesteDoItem2</div>
+	<div class="item">TesteDoItem3</div>
+</section>
+
+<h1>flex-flow: row wrap;</h1>
+<section class="container row-wrap">
+	<div class="item">TesteDoItem1</div>
+	<div class="item">TesteDoItem2</div>
+	<div class="item">TesteDoItem3</div>
+</section>
+
+<h1>flex-flow: column-nowrap;</h1>
+<section class="container column-nowrap">
+	<div class="item">TesteDoItem1</div>
+	<div class="item">TesteDoItem2</div>
+	<div class="item">TesteDoItem3</div>
+</section>

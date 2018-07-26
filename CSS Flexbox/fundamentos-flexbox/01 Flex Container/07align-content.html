@@ -1,0 +1,128 @@
+<style>
+.stretch {
+	align-content: stretch;
+}
+
+.flex-start {
+	align-content: flex-start;
+}
+
+.flex-end {
+	align-content: flex-end;
+}
+
+.center {
+	align-content: center;
+}
+
+.space-between {
+	align-content: space-between;
+}
+
+.space-around {
+	align-content: space-around;
+}
+
+/* Flex Container */
+.container {
+	max-width: 420px;
+	height: 300px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+	flex-wrap: wrap;
+}
+/* Flex Item */
+.item {
+	flex: 1;
+	margin: 5px;
+	padding: 0 10px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+</style>
+
+<h1>align-content: stretch;</h1>
+<section class="container stretch">
+	<div class="item">TestandoPalavra1</div>
+	<div class="item">Teste 2 do Item</div>
+	<div class="item">Teste 3 do Item Agora Mesmo</div>
+	<div class="item">Teste 4</div>
+	<div class="item">Teste 5</div>
+	<div class="item">Teste 6</div>
+	<div class="item">Teste 7</div>
+	<div class="item">Teste 8</div>
+</section>
+
+<h1>align-content: flex-start;</h1>
+<section class="container flex-start">
+	<div class="item">TestandoPalavra1</div>
+	<div class="item">Teste 2 do Item</div>
+	<div class="item">Teste 3 do Item Agora Mesmo</div>
+	<div class="item">Teste 4</div>
+	<div class="item">Teste 5</div>
+	<div class="item">Teste 6</div>
+	<div class="item">Teste 7</div>
+	<div class="item">Teste 8</div>
+</section>
+
+<h1>align-content: flex-end;</h1>
+<section class="container flex-end">
+	<div class="item">TestandoPalavra1</div>
+	<div class="item">Teste 2 do Item</div>
+	<div class="item">Teste 3 do Item Agora Mesmo</div>
+	<div class="item">Teste 4</div>
+	<div class="item">Teste 5</div>
+	<div class="item">Teste 6</div>
+	<div class="item">Teste 7</div>
+	<div class="item">Teste 8</div>
+</section>
+
+<h1>align-content: center;</h1>
+<section class="container center">
+	<div class="item">TestandoPalavra1</div>
+	<div class="item">Teste 2 do Item</div>
+	<div class="item">Teste 3 do Item Agora Mesmo</div>
+	<div class="item">Teste 4</div>
+	<div class="item">Teste 5</div>
+	<div class="item">Teste 6</div>
+	<div class="item">Teste 7</div>
+	<div class="item">Teste 8</div>
+</section>
+
+<h1>align-content: space-between;</h1>
+<section class="container space-between">
+	<div class="item">TestandoPalavra1</div>
+	<div class="item">Teste 2 do Item</div>
+	<div class="item">Teste 3 do Item Agora Mesmo</div>
+	<div class="item">Teste 4</div>
+	<div class="item">Teste 5</div>
+	<div class="item">Teste 6</div>
+	<div class="item">Teste 7</div>
+	<div class="item">Teste 8</div>
+</section>
+
+<h1>align-content: space-around;</h1>
+<section class="container space-around">
+	<div class="item">TestandoPalavra1</div>
+	<div class="item">Teste 2 do Item</div>
+	<div class="item">Teste 3 do Item Agora Mesmo</div>
+	<div class="item">Teste 4</div>
+	<div class="item">Teste 5</div>
+	<div class="item">Teste 6</div>
+	<div class="item">Teste 7</div>
+	<div class="item">Teste 8</div>
+</section>

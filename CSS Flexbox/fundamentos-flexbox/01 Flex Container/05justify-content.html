@@ -1,0 +1,156 @@
+<style>
+  .flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.center {
+	justify-content: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.space-around {
+	justify-content: space-around;
+}
+
+/* Flex Container */
+.container {
+	max-width: 420px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+
+.column {
+	min-height: 200px;
+	flex-direction: column;
+}
+
+/* Flex Item */
+.item {
+	margin: 5px;
+	padding: 0 10px;
+	background: #89609E;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* Indica que o conteúdo deve se expandir */
+.flex {
+	flex: 1;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+</style>
+
+<h1>justify-content: flex-start;</h1>
+<section class="container flex-start">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: flex-end;</h1>
+<section class="container flex-end">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: center;</h1>
+<section class="container center">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: space-between;</h1>
+<section class="container space-between">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: space-around;</h1>
+<section class="container space-around">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: space-around; // itens com flex: 1;</h1>
+<section class="container space-around">
+	<div class="item flex">1</div>
+	<div class="item flex">Teste 2</div>
+	<div class="item flex">3</div>
+	<div class="item flex">4</div>
+</section>
+
+<h1>justify-content: flex-start; // column</h1>
+<section class="container flex-start column">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: flex-end; // column</h1>
+<section class="container flex-end column">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: center; // column</h1>
+<section class="container center column">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: space-between; // column</h1>
+<section class="container space-between column">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: space-around; // column</h1>
+<section class="container space-around column">
+	<div class="item">1</div>
+	<div class="item">Teste 2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+</section>
+
+<h1>justify-content: space-around; // column // itens com flex: 1;</h1>
+<section class="container space-around column">
+	<div class="item flex">1</div>
+	<div class="item flex">Teste 2</div>
+	<div class="item flex">3</div>
+	<div class="item flex">4</div>
+</section>
