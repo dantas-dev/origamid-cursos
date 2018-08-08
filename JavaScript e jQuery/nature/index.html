@@ -13,7 +13,8 @@
 	
 	<header class="menu">
 		<a class="logo" href="/">Nature</a>
-		<nav>
+		<span class="mobile-btn"></span>
+		<nav class="menu-nav mobile-menu">
 			<ul>
 				<li><a href="#animais">Animais</a></li>
 				<li><a href="#florestas">Florestas</a></li>
@@ -21,18 +22,33 @@
 			</ul>
 		</nav>
 	</header>
+	
+	<section class="introducao slide">
+		<div>
+			<img src="img/slide/slide-1.jpg" alt="Animais">
+			<h2>Animais</h2>
+		</div>
+		<div>
+			<img src="img/slide/slide-2.jpg" alt="Florestas">
+			<h2>Florestas</h2>
+		</div>
+		<div>
+			<img src="img/slide/slide-3.jpg" alt="Montanhas">
+			<h2>Montanhas</h2>
+		</div>
+	</section>
 
 	<section class="container animais" data-group="animais" id="animais">
 
-		<h1>Animais Espirituais</h1>
+		<h1 data-anime="scroll">Animais Espirituais</h1>
 
-		<ul class="tab-menu">
+		<ul class="tab-menu" data-anime="scroll">
 			<li><a href="#fox" data-click="fox">Fox</a></li>
 			<li><a href="#firefox" data-click="firefox">FireFox</a></li>
 			<li><a href="#wolf" data-click="wolf">Wolf</a></li>
 		</ul>
 
-		<div class="item" id="fox" data-target="fox">
+		<div class="item" id="fox" data-target="fox" >
 			<div class="item-img">
 				<img src="img/fox.jpg" alt="Fox">
 				<h2>Fox</h2>
@@ -75,9 +91,9 @@
 
 	<section class="florestas" data-group="florestas" id="florestas">
 	<div class="container">
-		<h1>Florestas Termais</h1>
+		<h1 data-anime="scroll">Florestas Termais</h1>
 
-		<ul class="tab-menu">
+		<ul class="tab-menu" data-anime="scroll">
 			<li><a href="#estrada" data-click="estrada">Estrada</a></li>
 			<li><a href="#sol" data-click="sol">Sol</a></li>
 			<li><a href="#verde" data-click="verde">Verde</a></li>
@@ -139,9 +155,9 @@
 	
 <section class="container montanhas" data-group="montanhas" id="montanhas">
 
-		<h1>Montanhas da Alma</h1>
+		<h1 data-anime="scroll">Montanhas da Alma</h1>
 
-		<ul class="tab-menu">
+		<ul class="tab-menu" data-anime="scroll">
 			<li><a href="#pico" data-click="pico">Pico</a></li>
 			<li><a href="#montanha" data-click="montanha">Montanha</a></li>
 			<li><a href="#monte" data-click="monte">Monte</a></li>
@@ -187,7 +203,7 @@
 		</div>
 
 	</section>	
-
+	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>

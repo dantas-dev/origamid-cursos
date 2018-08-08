@@ -1,0 +1,36 @@
+body {
+	font-family: monospace;
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+form textarea {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 300px;
+	max-width: 600px;
+	padding: 15px;
+	font-size: 1.2em;
+	font-family: monospace;
+	border: 2px solid #8844ee;
+}
+
+form textarea:focus {
+	outline: none;
+	border-color: black; 
+}
+
+p {
+	margin: 10px auto;
+	max-width: 632px;
+	font-size: 1.2em;
+}
+
+p > span {
+	color: #84e;
+	font-weight: bold;
+}
