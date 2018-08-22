@@ -1,0 +1,61 @@
+$cor-primaria: blue;
+$font-primaria: monospace;
+$gutter: 60px;
+
+section {
+	max-width: 600px;
+	margin: 0 auto;	
+}
+
+.modal {
+	h1 {
+		color: $cor-primaria;
+		font-family: $font-primaria;
+		margin-bottom: $gutter;
+	}
+
+	p {
+		font: {
+			size: 1.4em;
+			family: $font-primaria;
+			style: italic;
+		}
+		line-height: 1.6;
+		max-width: 400px;
+	}
+
+	a {
+		display: block;
+		max-width: 120px;
+		padding: 10px;
+		border-radius: 4px;
+		text-align: center;
+		background: $cor-primaria;
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: $font-primaria;
+	}
+}
+
+ul {
+	text-align: center;
+	li {
+		display: inline-block;
+		list-style: none;
+		a {
+			display: block;
+			padding: 20px;
+			text-decoration: none;
+			background: tomato;
+			color: #fff;
+			transition: background .3s;
+			.active & {
+				background: red;
+			}
+			&:hover {
+				background: gold;
+			}
+		}
+	}
+}

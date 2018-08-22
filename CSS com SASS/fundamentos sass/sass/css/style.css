@@ -1,0 +1,22 @@
+p {
+  color: red;
+}
+
+a {
+  display: block;
+  width: 200px;
+  height: 40px;
+}
+
+div {
+  background: #999;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid purple;
+}
+
+div a {
+  color: tomato;
+}
+/*# sourceMappingURL=style.css.map */

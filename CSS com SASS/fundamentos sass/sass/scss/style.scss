@@ -1,0 +1,16 @@
+@import "colors";
+@import "buttons";
+
+$preto: #999;
+$border: purple;
+
+div {
+  background: $preto;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid $border;
+  a {
+    color:tomato;
+  }
+}

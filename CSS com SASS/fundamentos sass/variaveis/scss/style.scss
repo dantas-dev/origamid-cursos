@@ -1,0 +1,34 @@
+$cor-primaria: #84e;
+$font-primaria: monospace;
+$gutter: 20px;
+
+section {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+h1 {
+	color: $cor-primaria;
+	font-family: $font-primaria;
+	margin-bottom: $gutter;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.4;
+	max-width: 400px;
+	font-family: $font-primaria;
+}
+
+a {
+	display: block;
+	max-width: 120px;
+	padding: 10px;
+	border-radius: 4px;
+	text-align: center;
+	background: $cor-primaria;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: $font-primaria;
+}

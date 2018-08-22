@@ -1,0 +1,59 @@
+section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.modal h1 {
+  color: blue;
+  font-family: monospace;
+  margin-bottom: 60px;
+}
+
+.modal p {
+  font-size: 1.4em;
+  font-family: monospace;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.modal a {
+  display: block;
+  max-width: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background: blue;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  background: tomato;
+  color: #fff;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+.active ul li a {
+  background: red;
+}
+
+ul li a:hover {
+  background: gold;
+}
+/*# sourceMappingURL=style.css.map */

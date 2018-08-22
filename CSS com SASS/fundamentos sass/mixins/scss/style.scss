@@ -1,0 +1,129 @@
+@mixin title-large {
+	font-size: 4em;
+	font-weight: bold;
+	font-family: monospace;
+	line-height: 1;
+}
+
+@mixin border-box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+@mixin separador($color: blue, $largura: 100px) {
+	&::after {
+		content: '';
+		display: block;
+		width: $largura;
+		height: 4px;
+		background: $color;
+	}
+}
+
+@mixin box-shadow($shadow...) {
+	box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-webkit-box-shadow: $shadow;
+}
+
+@mixin mobile {
+	@media (max-width: 600px){
+		@content;
+	}
+}
+
+$cor-primaria: blue;
+$font-primaria: monospace;
+$gutter: 60px;
+
+section {
+	@include border-box;
+	max-width: 600px;
+	margin: 0 auto;	
+}
+
+.modal {
+
+	@include box-shadow(
+	10px 10px 0 0 rgba(0,0,0,.5),
+	-10px -10px 0 0 rgba(0,0,0,.5),
+	20px 20px 0 0 rgba(0,0,0,.5),
+	-20px -20px 0 0 rgba(0,0,0,.5))
+
+	h1.titulo {
+		color: $cor-primaria;
+		font-family: $font-primaria;
+		margin-bottom: $gutter;
+		@include title-large;
+		@include separador(tomato, 150px);
+		@include mobile {
+			color: teal;
+			font-size: 2em;
+		}
+	}
+	p {
+		font: {
+			size: 1.2em;
+			family: $font-primaria;
+			style: italic;
+		}
+		@include mobile {
+			font-size: 1em;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		line-height: 1.4;
+		max-width: 400px;
+	}
+	a {
+		display: block;
+		max-width: 120px;
+		padding: 10px;
+		border-radius: 4px;
+		text-align: center;
+		background: $cor-primaria;
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: $font-primaria;
+	}
+}
+
+ul {
+	text-align: center;
+	li {
+		display: inline-block;
+		list-style: none;
+		a {
+			display: block;
+			padding: 20px;
+			text-decoration: none;
+			background: blue;
+			color: white;
+			&:hover, &.active {
+				background: pink;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
