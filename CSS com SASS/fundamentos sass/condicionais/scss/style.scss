@@ -1,0 +1,194 @@
+$tema: deserto;
+$primary-color: black;
+$secondary-color: gray;
+
+@if $tema == oceano {
+	$primary-color: blue;
+	$secondary-color: orange;
+} @else if $tema == deserto {
+	$primary-color: yellow;
+	$secondary-color: purple;
+}
+
+@mixin type-1($size) {
+	font-family: monospace;
+	@if $size == 16 {
+		font-size: 1em;
+		font-weight: normal;
+	} @else if $size == 18 {
+		font-size: 1.25em;
+		font-weight: normal; 
+	} @else if $size == 24 {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+}
+
+@mixin d($device) {
+	@if $device == m {
+		@media (max-width: 300px) {
+			@content;
+		}
+	}
+	@else if $device == t {
+		@media (max-width: 600px) {
+			@content;
+		}
+	}
+	@else if $device == s {
+		@media (max-width: 900px) {
+			@content;
+		}
+	}
+}
+
+div {
+	$width: 400px;
+	width: $width;
+	@if $width >= 400px {
+		height: $width * 1.5;
+	} @else {
+		height: $width;
+	}
+}
+
+div {
+	width: 100%;
+	@include d(t) {
+		width: 80%;
+	}
+	@include d(m) {
+		width: 60%;
+	}
+}
+
+p {
+	@include type-1(24);
+	color: $primary-color;
+	background: $secondary-color;
+}
+
+@mixin title-large {
+	font-size: 4em;
+	font-weight: bold;
+	font-family: monospace;
+	line-height: 1;
+}
+
+@mixin border-box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+@mixin separador($color: pink, $largura: 100px) {
+	&::after {
+		content: '';
+		display: block;
+		width: $largura;
+		height: 4px;
+		background: $color;
+	}
+}
+
+@mixin box-shadow($shadow...) {
+	box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-webkit-box-shadow: $shadow;
+}
+
+@mixin mobile {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+
+$cor-primaria: blue;
+$font-primaria: monospace;
+$gutter: 60px;
+
+section {
+	max-width: 600px;
+	margin: 0 auto;
+	@include border-box;
+}
+
+.modal {
+	@include box-shadow(10px 10px 0 0 rgba(0,0,0,.5),
+											15px 15px 0 0 rgba(0,0,0,.5),
+											20px 20px 0 0 rgba(0,0,0,.5));
+	h1 {
+		color: $cor-primaria;
+		font-family: $font-primaria;
+		margin-bottom: $gutter;
+		@include title-large;
+		@include separador(yellow, 400px);
+		@include mobile {
+			color: #84E;
+			font-size: 2em;
+		}
+	}
+	p {
+		font: {
+			size: 1.2em;
+			family: $font-primaria;
+			style: italic;
+		}
+		line-height: 1.4;
+		max-width: 400px;
+		@include mobile {
+			font-size: .6em;
+		}
+	}
+	a {
+		display: block;
+		max-width: 120px;
+		padding: 10px;
+		border-radius: 4px;
+		text-align: center;
+		background: $cor-primaria;
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: $font-primaria;
+	}
+}
+
+ul {
+	text-align: center;
+	li {
+		display: inline-block;
+		list-style: none;
+		a {
+			display: block;
+			padding: 20px;
+			text-decoration: none;
+			background: blue;
+			color: white;
+			&:hover, &.active {
+				background: pink;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

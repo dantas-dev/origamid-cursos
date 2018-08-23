@@ -1,0 +1,109 @@
+div::after, section::after, .container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.erro, .button-erro {
+  color: red;
+  font-weight: bold;
+}
+
+.button-erro {
+  padding: 20px;
+  width: 200px;
+}
+
+div {
+  width: 360px;
+  height: 200px;
+  background: #aaaaaa;
+}
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.modal {
+  box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5), 20px 20px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal h1 {
+  color: blue;
+  font-family: monospace;
+  margin-bottom: 60px;
+  font-size: 4em;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 1;
+}
+
+.modal h1::after {
+  content: '';
+  display: block;
+  width: 400px;
+  height: 4px;
+  background: yellow;
+}
+
+@media (max-width: 600px) {
+  .modal h1 {
+    color: #84E;
+    font-size: 2em;
+  }
+}
+
+.modal p {
+  font-size: 1.2em;
+  font-family: monospace;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+@media (max-width: 600px) {
+  .modal p {
+    font-size: .6em;
+  }
+}
+
+.modal a {
+  display: block;
+  max-width: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background: blue;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  background: blue;
+  color: white;
+}
+
+ul li a:hover, ul li a.active {
+  background: pink;
+}
+/*# sourceMappingURL=style.css.map */
