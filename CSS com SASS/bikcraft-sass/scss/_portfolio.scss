@@ -11,15 +11,13 @@
 
 .quote_clientes p{
 	text-align: center;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 18px;
-	line-height: 25px;
 	font-style: italic;
 	margin-bottom: 20px;
+	@include tipo-2(18);
 }
 
 .quote_clientes cite {
-	font-size: 18px;
+	@include tipo-1(18);
 	font-weight: bold;
 	float: right;
 	font-style: normal;
@@ -38,6 +36,8 @@
 
 .rslides li, .rslides_portfolio li{
 	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
 	position: absolute;
 	display: none;
 	width: 100%;

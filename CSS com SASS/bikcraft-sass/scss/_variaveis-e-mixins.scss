@@ -1,3 +1,48 @@
+/* Cores */
 $amarelo: #FEC63E;
 $black: #000;
 $white: #fff;
+
+/* Tipografia */
+@mixin tipo-1($tamanho) {
+  @if $tamanho == 14 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @else if $tamanho == 18 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  @else if $tamanho == 24 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  @else if $tamanho == 36px {
+    font-size: 36px;
+  }
+  @else if $tamanho == 48px {
+    font-size: 48px;
+  }
+}
+
+@mixin tipo-2($tamanho) {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  @if $tamanho == 14 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @else if $tamanho == 18 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  @else if $tamanho == 24 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  @else if $tamanho == 36px {
+    font-size: 36px;
+  }
+  @else if $tamanho == 48px {
+    font-size: 48px;
+  }
+}

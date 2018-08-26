@@ -5,9 +5,7 @@ body {
 }
 
 p {
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 14px;
-	line-height: 20px;
+	@include tipo-2(14);
 }
 
 img {
@@ -20,8 +18,7 @@ img {
 }
 
 #form-erro span, #form-send span  {
-	font-size: 18px;
-	line-height: 25px;
+	@include tipo-1(18);
 	margin-bottom: 10px;
 	display: block;
 }
@@ -38,8 +35,7 @@ img {
 	border: 3px solid $amarelo;
 	padding: 10px 30px;
 	color: $amarelo;
-	font-size: 14px;
-	line-height: 20px;
+	@include tipo-1(14);
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: .1em;
@@ -57,8 +53,7 @@ img {
 }
 
 .subtitulo {
-	font-size: 24px;
-	line-height: 30px;
+	@include tipo-1(24);
 	font-weight: bold;
 	letter-spacing: .1em;
 	color: $black;
@@ -77,8 +72,7 @@ img {
 }
 
 .subtitulo-interno {
-	font-size: 24px;
-	line-height: 30px;
+	@include tipo-1(24);
 	font-weight: bold;
 	letter-spacing: .1em;
 	color: $black;
@@ -104,16 +98,32 @@ img {
 	background: $amarelo; /* Amarelo */
 	padding: 15px 0;
 	z-index: 10;
+	@include device(mobile) {
+		position: relative;
+		padding-bottom: 0px;
+	}
+}
+
+@include device(mobile) {
+	.header img {
+		margin: 0 auto 10px auto;
+	}
 }
 
 .header_menu {
 	text-align: right;
+	@include device(mobile) {
+		text-align: center;
+	}
 }
 
 .header_menu ul li {
 	display: inline-block;
 	margin-left: 25px;
 	margin-top: 20px;
+	@include device(mobile) {
+		margin: 5px;
+	}
 }
 
 .header_menu ul li a {
@@ -121,18 +131,29 @@ img {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: .1em;
-	font-size: 14px;
-	line-height: 20px;
+	@include tipo-1(14);
 	padding: 10px 0;
 	transition: all .3s ease;
+	@include device(mobile) {
+		border: 4px solid $black;
+		width: 136px;
+		display: block;
+		float: left;
+	}
 }
 
 .header_menu ul li a:hover {
 	color: $white;
+	@include device(mobile) {
+		border-color: $white;
+	}
 }
 
 .header_menu ul li a.menu_ativo {
 	color: $white;
+	@include device(mobile) {
+		border-color: $white;
+	}
 }
 
 /* Introdução */
@@ -145,13 +166,22 @@ img {
 	margin-top: 92px;
 	text-align: center;
 	padding-top: 80px;
+	@include device(mobile) {
+		margin-top: 0px;
+		padding-top: 40px;
+		background: url("../img/bg-mobile.jpg") no-repeat center;
+		background-size: cover;
+	}
 }
 
 .introducao h1 {
-	font-size: 48px;
+	@include tipo-1(48);
 	color: $white;
 	font-weight: bold;
 	text-transform: uppercase;
+	@include device(mobile) {
+		@include tipo-1(36);
+	}
 }
 
 .quote-externo {
@@ -177,7 +207,7 @@ img {
 .quote-externo cite {
 	font-style: normal;
 	font-weight: bold;
-	font-size: 14px;
+	@include tipo-1(14);
 	letter-spacing: .1em;
 }
 
@@ -190,10 +220,13 @@ img {
 	text-align: center;
 	color: $white;
 	padding-top: 30px;
+	@include device(mobile) {
+		margin-top: 0px;
+	}
 }
 
 .introducao-interna h1 {
-	font-size: 36px;
+	@include tipo-1(36);
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -225,8 +258,7 @@ img {
 
 .produtos_lista li h3{
 	font-weight: bold;
-	font-size: 18px;
-	line-height: 25px;
+	@include tipo-1(18);
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	margin-top: 20px;
@@ -254,6 +286,9 @@ img {
 	padding-top: 40px;
 	text-align: center;
 	clear: both;
+	@include device(mobile) {
+		padding-top: 10px;
+	}
 }
 
 .call p{
@@ -300,6 +335,12 @@ img {
 	top: 209px;
 	right: 162px;
 	z-index: -1;
+	@include device(tablet){
+		right: 66px;
+	}
+	@include device(mobile) {
+		display: none;
+	}
 }
 
 .qualidade img{
@@ -314,12 +355,14 @@ img {
 .qualidade_lista li {
 	text-align: center;
 	padding: 0 40px;
+	@include device(tablet) {
+		padding: 0 10px;
+	}
 }
 
 .qualidade_lista li h3{
 	font-weight: bold;
-	font-size: 18px;
-	line-height: 25px;
+	@include tipo-1(18);
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	margin-top: 20px;
@@ -359,8 +402,7 @@ img {
 }
 
 .footer h3 {
-	font-size: 18px;
-	line-height: 25px;
+	@include tipo-1(18);
 	color: $amarelo;
 	text-transform: uppercase;
 	letter-spacing: .1em;
@@ -381,9 +423,7 @@ img {
 }
 
 .footer_contato ul li {
-	font-size: 14px;
-	line-height: 20px;
-	font-family: Georgia, "Times New Roman", serif;
+	@include tipo-2(14);
 }
 
 .footer_redes ul li {
@@ -391,11 +431,25 @@ img {
 	margin-right: 10px;
 }
 
+
+.footer_redes ul li a img {
+	@include device(tablet) {
+	width: 26px;
+	height: 26px;
+	}
+}
+
+
 .footer_redes ul li a {
 	border: 3px solid $amarelo;
 	display: block;
 	padding: 10px;
 	transition: all .5s ease;
+	@include device(tablet) {
+		border: 3px solid $amarelo;
+		display: block;
+		padding: 6px;
+	}
 }
 
 .footer_redes ul li a:hover {
