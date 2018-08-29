@@ -1,0 +1,129 @@
+// Variaveis Grid
+$columns: 12; 
+$gutter: 20px; // margin left+right
+
+// Breakpoints 
+$large-device: 1200px;
+$medium-device: 760px;
+$small-device: 480px;
+
+//box-sizing
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+// Mixin media-querie
+@mixin device($size) {
+  @if $size == large {
+    @media screen and (min-width: #{$large-device} ) {
+      @content;
+    }
+  }
+  @else if $size == medium {
+    @media screen and (min-width: #{$medium-device}) and (max-width: #{$large-device - 1}) {
+      @content;
+    }
+  }
+  @else if $size == small {
+    @media screen and (max-width: #{$medium-device - 1}) {
+      @content;
+    }
+  }
+}
+
+// Funcao Grid
+@function grid($colunm, $offset: false) {
+  $width: $colunm / $columns * 100 + %;
+  $result: calc(#{$width} - #{$gutter});
+  @if $offset == offset {
+    $gutter: $gutter / 2;
+    $result: calc(#{$width} + #{$gutter});
+  }
+
+  @return $result;
+}
+
+// Gerar Classes do Grid
+@for $i from 1 through $columns {
+  .grid-#{$i} {
+    width: grid($i);
+  }
+}
+
+// Mixin Estrutura do Grid
+@mixin grid-structure {
+  float: left;
+  min-height: 1px;
+  margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
+  @include device(small) {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+[class^="grid-"] {
+  @include grid-structure;
+}
+
+// Gerar Classes do Offset
+@for $i from 1 through $columns {
+  .offset-#{$i} {
+    margin-left: grid($i, offset);
+    @extend %offset;
+  }
+}
+
+@include device(small) {
+  %offset {
+    margin-left: 0;
+  }
+}
+
+// Mixin Clearfix
+@mixin clearfix {
+  &::after, &::before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Mixin Container
+@mixin container {
+  max-width: $large-device;
+  margin: 0 auto;
+  position: relative;
+  @include device(medium) {
+    max-width: $medium-device;
+  }
+  @include device(small) {
+    max-width: $small-device;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include clearfix;
+}
+
+.container {
+  @include container;
+}
+
+
+// Mixin row
+@mixin row {
+  position: relative;
+  margin-left: -$gutter / 2;
+  margin-right: -$gutter / 2;
+  @include device(small) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include clearfix;
+}
+
+.row {
+  @include row;
+}

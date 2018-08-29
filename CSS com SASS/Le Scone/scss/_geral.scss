@@ -1,0 +1,37 @@
+body {
+  background: $bege-claro;
+  border: 10px solid $bege-medio;
+  color: $cinza;
+  @include device(small) {
+    border: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  @include tipografia-1(18);
+}
+
+.titulo {
+  @include tipografia-1(18);
+  text-transform: uppercase;
+  @include device(small) {
+    margin-bottom: 40px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 75%;
+    float: right;
+    height: 2px;
+    background: $cinza;
+    margin-top: 14px;
+    @include device(medium) {
+      width: 60%;
+    }
+  }
+}

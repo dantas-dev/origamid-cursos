@@ -1,0 +1,73 @@
+.contato {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  @include device(small) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.contato {
+  form {
+    label {
+      @include tipografia-1(18);
+      display: block;
+    }
+    input[type="text"], textarea {
+      @include tipografia-1(18);
+      color: $cinza;
+      width: 100%;
+      padding: 0 5px;
+      height: 40px;
+      border: 2px solid $bege-escuro;
+      background: transparent;
+      margin-bottom: 1em;
+      &:hover, &:focus {
+        outline: none;
+        border-color: $cinza;
+      }
+    }
+    textarea {
+      height: 120px;
+    }
+  }
+}
+
+input.button {
+  @include tipografia-1(18);
+  cursor: pointer;
+  color: $bege-escuro;
+  text-transform: uppercase;
+  border: 2px solid $bege-escuro;
+  background: transparent;
+  display: block;
+  width: 200px;
+  padding-top: 5px;
+  @include box-shadow(5px 5px 0px -2px $bege-medio, 5px 5px 0 0 $bege-escuro);
+  transition: .3s;
+  &:hover {
+    @include box-shadow(3px 3px 0px -2px $bege-medio, 3px 3px 0 0 $bege-escuro);
+    letter-spacing: 2px;
+  }
+}
+
+.contato-info {
+  display: inline-block;
+  color: $bege-escuro;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  @include device(large) {
+    float: right;
+    text-align: right;
+    margin-top: -3em;
+  }
+}
+
+.contato-mapa {
+  display: block;
+  @include box-shadow(0 0 0 10px $bege-medio);
+  clear: both;
+  img {
+    width: 100%;
+  }
+}

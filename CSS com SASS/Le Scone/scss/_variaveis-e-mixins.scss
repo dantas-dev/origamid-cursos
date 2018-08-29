@@ -1,0 +1,48 @@
+// Cores
+$bege-claro: #edece4;
+$bege-medio: #cbc6b9;
+$bege-escuro: #988c77;
+$cinza: #2a2426;
+$verde: #1ab912;
+
+// Tipografia
+$fonte-1: 'PT Mono', monospace;
+$fonte-2: 'Aref Ruqaa', serif;
+
+@function em($pixel, $contexto: 16) {
+  @return $pixel / $contexto + em;
+}
+
+@mixin tipografia-1($size) {
+  font-family: $fonte-1;
+  @if size == 14 {
+    font-size: em(14);
+    line-height: em(20, 14);
+  }
+  @else if $size == 16 {
+    font-size: em(16);
+    line-height: em(30, 16);
+  }
+  @else if $size == 18 {
+    font-size: em(18);
+    line-height: em(30, 18);
+  }
+}
+
+@mixin tipografia-2($size) {
+  font-family: $fonte-2;
+  @if $size == 18 {
+    font-size: em(18);
+    line-height: em(30, 18);
+  }
+  @else if $size == 24 {
+    font-size: em(24);
+    line-height: em(30, 24);
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
