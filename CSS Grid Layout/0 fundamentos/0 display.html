@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Display Grid</title>
+  <style>
+    /* Grid Container */
+.grid {
+	display: grid;
+}
+
+.grid-template-columns {
+	grid-template-columns: 200px 200px;
+}
+
+.grid-template-columns-3 {
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+.subgrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
+
+.subgrid > div {
+	background: rgba(0,0,0,.3);
+}
+
+/* Estilos Gerais */
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.grid {
+	max-width: 400px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+	margin: 0px;
+	padding-bottom: 60px;
+}
+
+body > div {
+	padding: 40px 0;
+}
+
+body > div:nth-of-type(even) {
+	background: rgba(0,0,0,.03);
+}
+  </style>
+</head>
+<body>
+    <div>
+        <h1>display: block;</h1>
+        <section class="grid">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>display: grid;</h1>
+        <section class="grid">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 200px 200px;</h1>
+        <section class="container grid grid-template-columns">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 1fr 2fr 1fr;</h1>
+        <section class="container grid grid-template-columns-3">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>subgrid</h1>
+        <section class="container grid grid-template-columns-3">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item subgrid">
+            <div>5.1</div>
+            <div>5.2</div>
+            <div>5.3</div>
+          </div>
+          <div class="item">6</div>
+        </section>
+        </div>
+</body>
+</html>
