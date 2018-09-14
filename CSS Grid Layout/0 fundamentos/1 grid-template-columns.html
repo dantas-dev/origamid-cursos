@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>grid-template-columns</title>
+  <style>
+    /* Grid */
+.grid {
+	display: grid;
+}
+
+/* 100px é o valor total, ignora conteúdo, margem e etc. Respeita apenas o min-width do item.*/
+.grid-template-columns-1 {
+	grid-template-columns: 100px 100px 100px 100px;
+}
+
+/* fr é uma unidade fracional */
+.grid-template-columns-2 {
+	grid-template-columns: 1fr 2fr;
+}
+
+/* minmax define um valor mínimo e máximo para a coluna */
+.grid-template-columns-3 {
+	grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+}
+
+/* O repeat vai repetir o número de colunas */
+.grid-template-columns-4 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+/* Auto-fit vai calcular automaticamente o total de colunas */
+.grid-template-columns-5 {
+	grid-template-columns: repeat(auto-fit, 100px);
+}
+
+/* Com o auto-fit realmente é criado um layout responsivo */
+.grid-template-columns-6 {
+	grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+}
+
+/* Com o auto-fit realmente é criado um layout responsivo */
+.grid-template-columns-7 {
+	grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+}
+
+
+/* Estilos Gerais */
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.grid {
+	max-width: 400px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+	margin: 0px;
+	padding-bottom: 60px;
+}
+
+body > div {
+	padding: 40px 0;
+}
+
+body > div:nth-of-type(even) {
+	background: rgba(0,0,0,.03);
+}
+  </style>
+</head>
+<body>
+    <div>
+        <h1>grid-template-columns: 100px 100px 100px 100px;</h1>
+        <section class="grid grid-template-columns-1">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 100px 100px 100px 100px;</h1>
+        <section class="grid grid-template-columns-1">
+          <div class="item">PalavraTeste</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">PalavraTeste</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 1fr 2fr;</h1>
+        <section class="grid grid-template-columns-2">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: 1fr 2fr;</h1>
+        <section class="grid grid-template-columns-2">
+          <div class="item">PalavraTesteGrandeRespeita</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+        <section class="grid grid-template-columns-3">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+        <section class="grid grid-template-columns-3">
+          <div class="item">TestePalavraTeste</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+        <section class="grid grid-template-columns-3">
+          <div class="item">1</div>
+          <div class="item">TestePalavraTeste</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(3, 1fr);</h1>
+        <section class="grid grid-template-columns-4">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(auto-fit, 100px);</h1>
+        <section class="grid grid-template-columns-5">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(auto-fit, minmax(100px, auto));</h1>
+        <section class="grid grid-template-columns-6">
+          <div class="item">PalavraTesteMesmo1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-columns: repeat(auto-fill, minmax(100px, auto));</h1>
+        <section class="grid grid-template-columns-7">
+          <div class="item">PalavraTesteMesmo1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </section>
+        </div>
+</body>
+</html>

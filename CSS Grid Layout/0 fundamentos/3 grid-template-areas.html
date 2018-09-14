@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* Grid */
+.grid {
+	display: grid;
+}
+
+.logo {
+	grid-area: logo;
+}
+
+.nav {
+	grid-area: nav;
+}
+
+.content {
+	grid-area: content;
+}
+
+.sidenav {
+	grid-area: sidenav;
+}
+
+.advert {
+	grid-area: advert;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+.grid-template-areas-1 {
+	grid-template-areas:
+		"logo nav nav"
+		"sidenav content advert"
+		"sidenav footer footer"
+		;
+}
+
+.grid-template-areas-2 {
+	grid-template-areas:
+		"sidenav logo nav"
+		"sidenav content advert"
+		"sidenav content footer"
+		;
+}
+
+.grid-template-areas-3 {
+	grid-template-areas:
+		"logo logo"
+		"nav nav"
+		"content content"
+		"sidenav advert"
+		"footer footer"
+		;
+}
+
+.grid-template-areas-4 {
+	grid-template-columns: 30% 60% 10%;
+	grid-template-rows: 50px 150px 50px;
+	grid-template-areas:
+		"logo nav nav"
+		"sidenav content advert"
+		"sidenav footer footer"
+		;
+}
+
+.grid-template-areas-5 {
+	grid-template-areas:
+		"logo content nav"
+		". content advert"
+		"sidenav footer ."
+		;
+}
+
+/* Grid Item */
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.grid {
+	max-width: 400px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+	padding-bottom: 60px;
+	margin: 0px;
+}
+
+body > div {
+	padding: 40px 0;
+}
+
+body > div:nth-of-type(even) {
+	background: rgba(0,0,0,.03);
+}
+
+body > div > img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+  </style>
+</head>
+<body>
+    <div>
+        <h1>grid-template-areas</h1>
+        <section class="grid grid-template-areas-1">
+          <div class="item logo">logo</div>
+          <div class="item nav">nav</div>
+          <div class="item content">content</div>
+          <div class="item sidenav">sidenav</div>
+          <div class="item advert">advert</div>
+          <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas</h1>
+        <section class="grid grid-template-areas-2">
+          <div class="item logo">logo</div>
+          <div class="item nav">nav</div>
+          <div class="item content">content</div>
+          <div class="item sidenav">sidenav</div>
+          <div class="item advert">advert</div>
+          <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas (mobile)</h1>
+        <section class="grid grid-template-areas-3">
+          <div class="item logo">logo</div>
+          <div class="item nav">nav</div>
+          <div class="item content">content</div>
+          <div class="item sidenav">sidenav</div>
+          <div class="item advert">advert</div>
+          <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas (coluna e linha)</h1>
+        <section class="grid grid-template-areas-4">
+          <div class="item logo">logo</div>
+          <div class="item nav">nav</div>
+          <div class="item content">content</div>
+          <div class="item sidenav">sidenav</div>
+          <div class="item advert">advert</div>
+          <div class="item footer">footer</div>
+        </section>
+        </div>
+        
+        <div>
+        <h1>grid-template-areas (. para área vazia)</h1>
+        <section class="grid grid-template-areas-5">
+          <div class="item logo">logo</div>
+          <div class="item nav">nav</div>
+          <div class="item content">content</div>
+          <div class="item sidenav">sidenav</div>
+          <div class="item advert">advert</div>
+          <div class="item footer">footer</div>
+        </section>
+        </div>
+</body>
+</html>
