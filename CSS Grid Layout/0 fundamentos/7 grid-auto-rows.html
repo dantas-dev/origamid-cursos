@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<div>
+<h1>grid-auto-rows: 100px;</h1>
+<section class="grid grid-auto-rows-1">
+	<div class="item">1</div>
+	<div class="item">2</div>
+	<div class="item">3</div>
+	<div class="item">4</div>
+	<div class="item">5</div>
+</section>
+</div>
+
+
+<div>
+<h1>grid-auto-rows: 50px 100px;</h1>
+<section class="grid grid-auto-rows-2">
+	<div class="item logo">logo</div>
+	<div class="item nav">nav</div>
+	<div class="item content">content</div>
+	<div class="item sidenav">sidenav</div>
+	<div class="item advert">advert</div>
+	<div class="item footer">footer</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+	<div class="item">p</div>
+</section>
+</div>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* Grid */
+.grid {
+	display: grid;
+}
+
+.grid-auto-rows-1 {
+	grid-template-rows: 1fr 1fr;
+	grid-auto-rows: 100px;
+}
+
+.grid-auto-rows-2 {
+	grid-template:
+		"logo nav nav" 50px
+		"sidenav content advert" 150px
+		"sidenav footer footer" 100px
+		/ 100px 1fr 50px;
+	grid-auto-rows: 50px 100px;
+}
+
+
+.logo {
+	grid-area: logo;
+}
+
+.nav {
+	grid-area: nav;
+}
+
+.content {
+	grid-area: content;
+}
+
+.sidenav {
+	grid-area: sidenav;
+}
+
+.advert {
+	grid-area: advert;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+/* Grid Item */
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.grid {
+	max-width: 400px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+	padding-bottom: 60px;
+	margin: 0px;
+}
+
+body > div {
+	padding: 40px 0;
+}
+
+body > div:nth-of-type(even) {
+	background: rgba(0,0,0,.03);
+}
+
+body > div > img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+  </style>
+</head>
+<body>
+    <div>
+        <h1>grid-auto-rows: 100px;</h1>
+        <section class="grid grid-auto-rows-1">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+        </section>
+        </div>
+        
+        
+        <div>
+        <h1>grid-auto-rows: 50px 100px;</h1>
+        <section class="grid grid-auto-rows-2">
+          <div class="item logo">logo</div>
+          <div class="item nav">nav</div>
+          <div class="item content">content</div>
+          <div class="item sidenav">sidenav</div>
+          <div class="item advert">advert</div>
+          <div class="item footer">footer</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+          <div class="item">p</div>
+        </section>
+        </div>
+</body>
+</html>
