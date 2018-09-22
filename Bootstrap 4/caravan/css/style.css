@@ -6,4 +6,36 @@ body {
               0 4px 8px 0 rgba(0,0,0, .05);
 }
 
-.icone { height: 100px; };
+.icone { height: 100px; }
+
+.bg-quote {
+  background: url('../img/bg-quote.jpg') center center;
+  background-size: cover;
+}
+
+.button {
+  max-width: 140px;
+}
+
+.lista-plano li + li {
+  border-top: 1px solid rgba(0,0,0, .2);
+}
+
+.lista-plano li {
+  padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 0px;
+  }
+
+  .fixed-top {
+    position: relative;
+  }
+
+  .bg-quote .display-4 {
+    font-size: 2.5rem;
+  }
+}
+
