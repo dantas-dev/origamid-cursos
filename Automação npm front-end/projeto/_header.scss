@@ -1,0 +1,8 @@
+@mixin sombra() {
+  box-shadow: 4px 4px 4px rgba(0,0,0,.3);
+}
+
+header {
+  background: blue;
+  @include sombra();
+}
