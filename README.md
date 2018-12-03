@@ -13,7 +13,7 @@ https://www.origamid.com/cursos/
 - [x] CSS Grid Layout
 - [x] Bootstrap 4
 - [x] Automação Front End com NPM
-- [ ] Javascript completo ES6+
+- [ ] Javascript completo ES6+ (cursando)
 - [ ] Adobe XD
-- [ ] UI Design Avançado
+- [ ] UI Design Avançado (cursando)
 - [ ] UX Design Heurísticas
