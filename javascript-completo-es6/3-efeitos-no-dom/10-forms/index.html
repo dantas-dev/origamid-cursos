@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Forms</title>
+  <style>
+    label {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin-bottom: .5rem;
+      margin-top: 1rem;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: .5rem;
+      border: 2px solid #000;
+      font-size: 1rem;
+      margin-bottom: .5rem;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    .invalido {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+    <form name="contato" id="contato">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label for="mensagem">Mensagem</label>
+        <textarea name="mensagem" id="mensagem"></textarea>
+      </form>
+  <!-- <form name="contato" id="contato">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+    <span class="erro"></span>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <span class="erro"></span>
+    <label for="mensagem">Mensagem</label>
+    <textarea name="mensagem" id="mensagem"></textarea>
+  </form>
+
+  <select name="cores" id="cores">
+    <option value="blue">blue</option>
+    <option value="red">red</option>
+  </select>
+
+  <input type="color">
+<input type="date">
+<input type="number">
+<input type="range">
+<input type="password">
+
+<label for="identidade">Possui identidade?</label>
+<input type="checkbox" value="identidade" id="identidade">
+<label for="casado">Casado?</label>
+<input type="checkbox" value="casado" id="casado">
+<input type="radio" id="guitarra" value="guitarra" name="instrumento" />
+<label for="guitarra">Guitarra</label>
+
+<input type="radio" id="violao" value="violao" name="instrumento" />
+<label for="violao">Violão</label>
+
+<input type="radio" id="baixo" value="baixo" name="instrumento" />
+<label for="baixo">Baixo</label>
+ -->
+
+
+  <script>
+const form = document.getElementById('contato');
+const dados = {};
+function handleChange(event) {
+  dados[event.target.name] = event.target.value;
+  console.log(dados);
+}
+form.addEventListener('change', handleChange);
+
+  </script>
+</body>
+</html>
