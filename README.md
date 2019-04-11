@@ -14,6 +14,7 @@ https://www.origamid.com/cursos/
 - [x] Bootstrap 4
 - [x] Automação Front End com NPM
 - [ ] Javascript completo ES6+ (cursando)
+- [ ] Vue.js Completo
 - [ ] Adobe XD
-- [ ] UI Design Avançado (cursando)
+- [ ] UI Design Avançado
 - [ ] UX Design Heurísticas
