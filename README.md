@@ -1,5 +1,5 @@
 # OrigamidCursos
-Projetos feitos no curso da origamid | Designs made in the origamid course
+Projetos feitos no curso da origamid
 
 https://www.origamid.com/cursos/
 
