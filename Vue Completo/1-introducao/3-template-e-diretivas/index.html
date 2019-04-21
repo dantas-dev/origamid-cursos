@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Template e Diretivas - Vue</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{titulo}}</h1>
+    <div v-if="comprou" :style="{background: cor}">
+      <p>{{conteudo}}</p>
+      <p>{{lado * lado}}</p>
+      <p>{{comprou ? 'Sim ele comprou' : 'Nao comprou, compre aqui'}}</p>
+    </div>
+    <a v-bind:href="comprou ? href : '#'">{{href}}</a>
+    <input v-model="cor" type="color">
+    {{cor}}
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        titulo: "Curso de Javascript",
+        conteudo: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        lado: 5,
+        comprou: true,
+        href: "https://www.dantasdev.com",
+        cor: "#333",
+      }
+    });
+  </script>
+</body>
+</html>
