@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Data - Vue</title>
+</head>
+<body>
+
+  <div id="app">
+    {{logado}}
+  </div>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        color: 'red',
+        $instrumento: 'violão',
+        logado: ''
+      }
+    });
+
+    console.log(
+      vm.$instrumento,
+      vm.$data.$instrumento
+    );
+
+    setTimeout(() => {
+      vm.logado = "Sim"
+    }, 2000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Instância - Vue</title>
+</head>
+<body>
+
+  <div id="app">
+    {{nomeProduto}}
+  </div>
+
+  <script>
+    function VueClone(options) {
+      this.options = options;
+      this.$el = document.querySelector(options.el);
+      this.data = options.data;
+    }
+
+    const vmClone = new VueClone({
+      el: "#app",
+      data: {
+        nome: "Vue JS"
+      }
+    });
+
+    console.log(vmClone);
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        instrumento: 'Violão',
+        cor: 'Vermelho'
+      },
+      computed: {
+        nomeProduto() {
+          return `${this.instrumento} tem a cor ${this.cor}`;
+        }
+      }
+    });
+    console.log(vm);
+    
+  </script>
+</body>
+</html>

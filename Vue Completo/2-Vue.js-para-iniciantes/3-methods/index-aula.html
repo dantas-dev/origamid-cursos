@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Methods - Vue</title>
+</head>
+<body>
+  <div id="app">
+    {{total}}
+    <button @click='incrementar'>Incrementar</button>
+    <button @click='decrementar'>Decrementar</button>
+
+    <p>{{instrumento}}</p>
+    <button @click="mudarNome('Violão')">Violão</button>
+    <button @click="mudarNome('Bateria')">Bateria</button>
+    <button @click="verEvento">Evento</button>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        total: 0,
+        instrumento: 'default',
+      },
+      methods: {
+        incrementar() {
+          this.total++;
+        },
+        decrementar() {
+          this.total--;
+        },
+        mudarNome(nome) {
+          this.instrumento = nome;
+        },
+        verEvento(event) {
+          console.log(event.type);
+          this.teste();
+        },
+        teste() {
+          console.log('metodo teste.');
+        }
+      }
+    });
+
+    setInterval(() => {
+      vm.incrementar();
+    }, 1000);
+  </script>
+</body>
+</html>
