@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>V-ON - Vue</title>
+  <style>
+    li { list-style: none; }
+    a {
+      display: block;
+      padding: 10px;
+      margin: 4px 0;
+      background: tomato;
+      color: white;
+      text-decoration: none;
+    } 
+
+    a:hover { background: tan; }
+  </style>
+</head>
+<body>
+  <!--
+    Utilizando API
+    https://api.iextrading.com/1.0/stock/aapl/quote
+    
+    Adicione um evento de clique a cada <a> do html
+      acima e previna o comportamento padrão.
+      
+      Faça o fetch dos dados do href ao click e mostre na
+      interface o companyName, latestPrice, marketCap
+    -->
+  <div id="app">
+    <ul>
+      <li><a @click.prevent="getData" href="https://api.iextrading.com/1.0/stock/aapl/quote">Apple</a></li>
+      <li><a @click.prevent="getData" href="https://api.iextrading.com/1.0/stock/googl/quote">Google</a></li>
+      <li><a @click.prevent="getData" href="https://api.iextrading.com/1.0/stock/amzn/quote">Amazon</a></li>
+      <li><a @click.prevent="getData" href="https://api.iextrading.com/1.0/stock/ebay/quote">Ebay</a></li>
+      <li><a @click.prevent="getData" href="https://api.iextrading.com/1.0/stock/pypl/quote">Paypal</a></li>
+    </ul>
+    <div>
+      <p>companyName: {{companyName}}</p>
+      <p>latestPrice: {{latestPrice}}</p>
+      <p>marketCap: {{marketCap}}</p>
+    </div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        companyName: '',
+        latestPrice: '',
+        marketCap: '',
+      },
+      methods: {
+        async getData({target}) {
+          const url = target.href;
+          const response = await fetch(url);
+          const data = await response.json();
+          
+          this.companyName = data.companyName;
+          this.latestPrice = data.latestPrice;
+          this.marketCap = data.marketCap;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

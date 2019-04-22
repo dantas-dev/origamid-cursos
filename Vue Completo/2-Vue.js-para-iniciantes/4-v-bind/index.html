@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>V-BIND - Vue</title>
+  <style type="text/css">
+    .tg {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border-color: #9ABAD9;
+    }
+
+    .tg td {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 0px;
+      overflow: hidden;
+      word-break: normal;
+      border-color: #9ABAD9;
+      color: #444;
+      background-color: #EBF5FF;
+    }
+
+    .tg th {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 0px;
+      overflow: hidden;
+      word-break: normal;
+      border-color: #9ABAD9;
+      color: #fff;
+      background-color: #409cff;
+    }
+
+    .tg .tg-s6z2 {
+      text-align: center
+    }
+
+    .tg .tg-baqh {
+      text-align: center;
+      vertical-align: top
+    }
+
+    .tg .tg-0lax {
+      text-align: left;
+      vertical-align: top
+    }
+
+    .yes {
+      color: green !important;
+    }
+    .no {
+      color: red !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+  Utilizando as API's
+  https://api.iextrading.com/1.0/stock/aapl/quote
+  https://api.iextrading.com/1.0/stock/googl/quote
+
+  - Compare o marketCap (valor de
+  mercado) entre ambas.
+
+  - Mostre o nome das empresas e o valor
+  na interace (companyName e marketCap).
+
+  - Mude a cor para verde o nome da empresa com
+  maior marketCap e vermelho a com menor.
+-->
+
+  <div id="app">
+    <table class="tg">
+      <colgroup>
+        <col style="width: 100px">
+        <col style="width: 100px">
+      </colgroup>
+      <tr>
+        <th class="tg-s6z2">Company</th>
+        <th class="tg-baqh">Market CAP</th>
+      </tr>
+      <tr>
+        <td class="tg-0lax">{{company[0].name}}</td>
+        <td class="tg-0lax" :class="company[0].name > company[1].name ? 'yes' : 'no'">{{company[0].marketCap}}</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax" >{{company[1].name}}</td>
+        <td class="tg-0lax" :class="company[0].name > company[1].name ? 'no' : 'yes'">{{company[1].marketCap}}</td>
+      </tr>
+    </table>
+
+    <button @click="setValue">GET DATA</button>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        company: [
+          {
+            initials: 'aapl',
+            name: '',
+            marketCap: ''
+          },
+          {
+            initials: 'googl',
+            name: '',
+            marketCap: ''
+          }
+        ],
+      },
+      methods: {
+        async getName(initials) {
+          const response = await fetch(`https://api.iextrading.com/1.0/stock/${initials}/quote`);
+          const data = await response.json();
+
+          return data.companyName;
+        },
+        async getMarketCap(initials) {
+          const response = await fetch(`https://api.iextrading.com/1.0/stock/${initials}/quote`);
+          const data = await response.json();
+
+          return data.marketCap;
+        },
+        async asyncForEach(array, callback) {
+          for (let index = 0; index < array.length; index++) {
+            await callback(array[index], index, array);
+          }
+        },
+        async setValue() {
+          await this.asyncForEach(this.company, async (item) => {
+            item.name = await this.getName(item.initials);
+            item.marketCap = await this.getMarketCap(item.initials);
+          });
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

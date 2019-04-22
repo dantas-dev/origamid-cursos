@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>V-BIND - Vue</title>
+</head>
+<style>
+  .yes, .no { color: #fff; }
+  .yes { background: green; }
+  .no { background: tomato; }
+</style>
+<body>
+  <!-- v-bind = : (atalho) -->
+  <div id="app">
+    <a :href="link">click here</a>
+    <p :class="cor" class="ativo">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <button :class="comprou ? 'yes' : 'no'">Comprou</button>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        link: 'https://dantasdev.com',
+        cor: 'yellow',
+        comprou: true
+      }
+    });
+  </script>
+</body>
+</html>
