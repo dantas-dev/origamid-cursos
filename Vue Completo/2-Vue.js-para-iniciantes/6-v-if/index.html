@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>V-IF - Vue</title>
+</head>
+<body>
+  <!--
+  Simule a adição de um produto no carrinho
+  este produto possui estoque de 7 itens
+  (utilize a mesma ideia do contador).
+
+  Ao atingir 7 itens mostre uma mensagem informando
+  não ser possível adicinar mais do que 7 itens.
+
+  Remova também o botão de adicionar itens.
+-->
+
+  <div id="app">
+    <p><strong>Skate</strong></p>
+    <p>Price: {{skate.price}}</p>
+    <p>{{count}} / {{skate.qnt}}</p>
+    <button @click="++count" v-if="count < skate.qnt">+</button>
+    <button @click="count > 0 ? --count : false" v-if="count !== 0">-</button>
+    <p v-show="count >= skate.qnt" style="color: red;">não ser possível adicionar mais do que {{skate.qnt}} itens.</p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        count: 0,
+        skate: {
+          price: 299,
+          qnt: 7,
+        }
+      }
+    });
+  </script>
+</body>
+</html>

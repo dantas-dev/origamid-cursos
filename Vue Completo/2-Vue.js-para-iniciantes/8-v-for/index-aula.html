@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>V-FOR - Vue</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(curso, index) in cursos">{{index}} - {{curso}}</li>
+    </ul>
+
+    <ul>
+      <li v-for="({nome, populacao}, chave) in estados" :key="chave + nome">{{chave}} - {{nome}} possui {{populacao}} de habitantes.</li>
+    </ul>
+
+    <!-- <p v-for="numero in 5">{{numero}} ola</p> -->
+
+    <ul>
+        <li v-for="item in lista">{{item}}</li>
+      </ul>
+      <button @click="removerItem">Remover</button>
+      <button @click="addItem">Adicionar</button>
+      <button @click="mudarItem">Mudar</button>
+      <button @click="mudarItemComReatividade">Mudar reativo</button>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        cursos: ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
+        estados: {
+          sp: {
+            populacao: "45 milhões",
+            nome: "São Paulo"
+          },
+          mg: {
+            populacao: "21 milhões",
+            nome: "Minas Gerais"
+          },
+          rj: {
+            populacao: "17 milhões",
+            nome: "Rio de Janeiro"
+          }
+        },
+        lista: ["Item 1", "Item 2", "Item 3"]
+      },
+      methods: {
+        removerItem() {
+          this.lista.pop(); // Ativa reatividade
+        },
+        addItem() {
+          this.lista.push('novo item'); // Ativa reatividade
+        },
+        mudarItem() {
+          this.lista[0] = "Banana"; // Não ativa reatividade
+        },
+        mudarItemComReatividade() {
+          // metodo nativo do vue
+          this.$set(this.lista, 0, "item reativo");
+        }
+      }
+    });
+  </script>
+</body>
+</html>
