@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Computed e Watch - Vue</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{total}}</p>
+    <ul>
+      <li v-for="{marca, cor} in carros">{{marca}}, {{cor}}</li>
+    </ul>
+    <ul>
+      <li v-for="{marca, cor} in carrosAzuis">{{marca}}, {{cor}}</li>
+    </ul>
+
+    <button @click="removerCarro">Remover carro</button>
+
+    <p>{{contador}}</p>
+    <button @click="contador++">Add</button>
+
+    <form>
+      <input type="text" placeholder="cep" maxlength="8" v-model="cep">
+      <ul>
+        <li v-for="(valor, chave) in endereco">
+          {{chave}}: {{valor}}
+        </li>
+      </ul>
+    </form>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        cep: '',
+        endereco: {},
+        contador: 0,
+        preco: 59,
+        desconto: 10,
+        carros: [
+          {
+            marca: "VW",
+            cor: "Azul"
+          },
+          {
+            marca: "Ford",
+            cor: "Preto"
+          },
+          {
+            marca: "Tesla",
+            cor: "Azul"
+          }
+        ]
+      },
+      computed: {
+        total() {
+          return `R$ ${this.preco - this.desconto}`;
+        },
+        carrosAzuis() {
+          const filtro = this.carros.filter(({cor}) => cor === 'Azul');
+
+          return filtro;
+        }
+      },
+      watch: {
+        contador(valorNovo, valorAntigo) {
+          console.log(`contador mudou de ${valorAntigo} para ${valorNovo}.`);
+        },
+        cep(valorNovo) {
+          if(valorNovo.length === 8) {
+            fetch(`https://viacep.com.br/ws/${valorNovo}/json/`)
+            .then(r => r.json())
+            .then(data => {
+              this.endereco = data;
+            });
+          }
+        }
+      },
+      methods: {
+        removerCarro() {
+          this.carros.pop();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

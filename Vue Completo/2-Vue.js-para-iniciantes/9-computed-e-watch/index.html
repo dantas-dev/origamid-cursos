@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Computed e Watch - Vue</title>
+</head>
+<body>
+  <!--
+  Você possui o nome e sobrenome do usuário em data,
+  crie uma propriedade computed que retorne o nome completo
+  
+  Utilize a rest API para puxar as capitais dos paises
+  Use um campo de select, onde o usuário pode selecionar o país.
+  https://restcountries.eu/rest/v2/all
+
+  Com uma função watch, mude a capital de acordo com o país selecionado:
+
+  Ex de campo select:
+
+  <select name="paises" id="paises" v-model="selecionado">
+    <option v-for="pais in paises" :value="pais.name">
+      {{pais.name}}
+    </option>
+  </select>
+-->
+  <div id="app">
+    <p>{{nomeCompleto}}</p>
+    <div style="background: tomato; height: 2px; margin-bottom: 20px;"></div>
+    <button @click="puxarPaises">Puxar paises</button>
+    <div>
+      <select name="paises" id="paises" v-model="paisSelecionado">
+        <option :value="pais.name" v-for="pais in paises">
+          {{pais.name}}
+        </option>
+      </select>
+      <p>{{capital.capital}}</p>
+    </div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        nome: 'Eduardo',
+        sobrenome: 'Dantas',
+        paises: {},
+        paisSelecionado: '',
+        capital: '',
+      },
+      computed: {
+        nomeCompleto() {
+          return `${this.nome} ${this.sobrenome}`;
+        }
+      },
+      methods: {
+        async puxarPaises() {
+          const response = await fetch('https://restcountries.eu/rest/v2/all');
+          const data = await response.json();
+
+          this.paises = data;
+        }
+      },
+      watch: {
+        paisSelecionado(valor) {
+          this.capital = this.paises.find((pais) => pais.name === valor);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
