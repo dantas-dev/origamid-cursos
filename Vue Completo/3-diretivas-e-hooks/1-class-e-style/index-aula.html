@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Class e Style - Vue</title>
+</head>
+<body>
+
+  <div id="app">
+    <p :class="cor">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p :class="{ativo: estAtivo, verde: elementoVerde}">Mostrar texto com objetos</p>
+    <button @click="estAtivo = !estAtivo">Click</button>
+    <p :class="[cor, background]">Mostrar texto com arrays</p>
+    <p :class="[cor, { ativo: estAtivo }]">Mostrar texto com array e objeto</p>
+
+    <p :style="{background: bgColor, fontSize: tamanho + 'px'}">Estilize Ele</p>
+    <button @click="tamanho++">Aumentar</button>
+
+    <p :style="estiloBotao">Texto Ativo</p>
+    <p :style="estiloParagrafo">Texto Ativo</p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        cor: "azul",
+        estAtivo: false,
+        elementoVerde: false,
+        background: 'limao',
+        bgColor: "tomato",
+        tamanho: 20,
+        estiloBotao: {
+          background: "tomato",
+          color: "#fff",
+          fontSize: "20px"
+        }
+      },
+      computed: {
+        estiloParagrafo() {
+          const tamanho = Math.floor(Math.random() * 100);
+          return {
+            fontSize: tamanho + 'px'
+          }
+        }
+      }
+    });
+  </script>
+
+  <style>
+    .limao { background: limegreen; }
+    .azul { color: blue;}
+    .verde { color: green;}
+    .ativo { background: tomato; }
+  </style>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>V-MODEL - Vue</title>
+</head>
+<body>
+  <!-- 
+  1 - Crie um criador de botões.
+
+  O usuário poderá definir:
+  width,
+  height,
+  font-size,
+  font-family,
+  text-align,
+  background,
+  color,
+  border-radius,
+
+  As escolhas serão feitas em campos de
+  formulário. Cada escolha deverá ser 
+  refletida em um elemento (o botão).
+
+
+  2 - Crie um formulário com, nome, email, telefone e mensagem.
+  Ao clicar em enviar, as informações preenchidas no formulário
+  devem aparecer abaixo do mesmo. (previna o comportamento padrão do botão enviar)
+-->
+  <div id="app">
+    <h2>create button</h2>
+    <div>
+      <input type="color" v-model="btn.background">
+      <input type="text" v-model.lazy="btn.width">
+      <input type="text" v-model.lazy="btn.height">
+      <input type="text" v-model.lazy="btn.fontSize">
+      <input type="text" v-model.lazy="btn.color">
+      <input type="text" v-model.lazy="btn.borderRadius">
+    </div>
+    <p :style="btn" >Edit me</p>
+    <div style="height: 4px; background: black;"></div>
+    <h2>Formulario</h2>
+    <form>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" v-model="nome">
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" v-model="email">
+      <label for="telefone">Telefone</label>
+      <input type="text" name="telefone" id="telefone" v-model="telefone">
+      <textarea name="mensagem" id="mensagem" cols="30" rows="10" v-model="mensagem"></textarea>
+      <br>
+      <button @click.prevent="enviarFormulario" type="submit">Enviar</button>
+    </form>
+    <div>
+      <p v-for="(item, chave) in resultado">
+        {{chave}}:{{item}}
+      </p>
+    </div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        btn: {
+          background: '#fff',
+          width: 'auto',
+          height: 'auto',
+          fontSize: '1rem',
+          color: 'inherit',
+          borderRadius: 'none',
+        },
+        nome: '',
+        email: '',
+        telefone: '',
+        mensagem: '',
+        resultado: {
+
+        },
+      },
+      methods: {
+        enviarFormulario() {
+          this.resultado = {
+            nome: this.nome,
+            email: this.email,
+            telefone: this.telefone,
+            mensagem: this.mensagem
+          }
+        }
+      }
+    });
+  </script>
+  <style>
+    input {
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</body>
+</html>

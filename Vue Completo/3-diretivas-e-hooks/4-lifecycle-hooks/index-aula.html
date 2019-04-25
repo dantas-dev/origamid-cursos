@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Lifecycle Hooks - Vue</title>
+</head>
+<body>
+  <div id="app">
+      <button @click="destruir">Destruir</button>
+      <button @click="contador++">{{contador}}</button>
+    <p>{{mensagem}}</p>
+    <p>{{github}}</p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        mensagem: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        github: {},
+        contador: 0,
+      },
+      methods: {
+        async puxarGithub() {
+          const response = await fetch('https://api.github.com/users/EduD');
+          const data = await response.json();
+        
+          this.github = data;
+        },
+        destruir() {
+          this.$destroy();
+        }
+      },
+      beforeCreate() {
+        console.log('Iniciou beforeCreate');
+        console.log(this.mensagem);
+      },
+      created() {
+        console.log('Iniciou created');
+        console.log(this.mensagem);
+        this.puxarGithub();
+        console.log('Elemento do created:', this.$el)
+      },
+      beforeMount() {
+        console.log('Iniciou beforeMount');
+        console.log(this.mensagem);
+        console.log('Elemento do beforeMount:', this.$el);
+      },
+      mounted() {
+        console.log('Iniciou mounted');
+        console.log(this.mensagem);
+        console.log('Elemento do mounted:', this.$el);
+      },
+      beforeUpdate() {
+        console.log(this.contador);
+      },
+      updated() {
+        console.log(this.contador);
+      },
+      beforeDestroy() {
+        console.log('vai destruir');
+      },
+      destroyed() {
+        console.log('destruiu');
+      }
+    });
+
+    // hooks basicos
+    const vue = new Vue({
+      el: "#app",
+      beforeCreate() {},
+      created() {},
+      beforeMount() {},
+      mounted() {},
+      beforeUpdate() {},
+      updated() {},
+      beforeDestroy() {},
+      destroyed() {}
+    });
+  </script>
+
+  <style>
+
+  </style>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>v-on e Eventos Globais - Vue</title>
+</head>
+<body>
+  <div id="app">
+    <input @keyup.enter="ativar" type="text">
+    <input @click.right="ativar" type="text">
+
+    <p style="position: fixed;">{{totalScroll}}</p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        totalScroll: 0,
+      },
+      methods: {
+        ativar() {
+          console.log('ativou');
+        },
+        handleScroll() {
+          this.totalScroll = window.scrollY;
+        }
+      },
+      created() {
+        window.addEventListener('scroll', this.handleScroll);
+      }
+    });
+  </script>
+
+  <style>
+    body {
+      height: 2000px;
+    }
+  </style>
+</body>
+</html>

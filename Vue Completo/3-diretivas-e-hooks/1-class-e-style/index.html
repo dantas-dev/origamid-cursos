@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Class e Style - Vue</title>
+</head>
+<body>
+
+  <!-- Crie um botão que troque a orientação da lista, ou seja,
+ao invés de 4 colunas, uma única coluna com 4 linhas.
+
+O botão será responsável por trocar para lista e também
+responsável por reverter esse processo.
+Utilize adição/remoção de classes para atingir este efeito.
+
+A classe column já está criada, basta utilizar ela.
+-->
+
+  <div id="app">
+    <button @click="isActive = !isActive">Change direction</button>
+    <ul :class="{ column: isActive }">
+      <li @click="randomColor" :style="{ background: color }">Sobre</li>
+      <li @click="randomColor" :style="{ background: color }">Produtos</li>
+      <li @click="randomColor" :style="{ background: color }">Serviços</li>
+      <li @click="randomColor" :style="{ background: color }">Contato</li>
+    </ul>        
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        isActive: false,
+        color: '',
+      },
+      methods: {
+        randomColor() {
+          this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        }
+      }
+    });
+  </script>
+  <style>
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      font-family: monospace;
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+    }
+    .column {
+      flex-direction: column;
+    }
+    li {
+      cursor: pointer;
+      padding: 20px;
+      background: #84e;
+      color: white;
+      border-radius: 4px;
+      margin: 10px;
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+</body>
+</html>
