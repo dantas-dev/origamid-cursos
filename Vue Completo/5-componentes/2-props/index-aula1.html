@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Props - Vue</title>
+</head>
+<body>
+<div id="app">
+  <lista-produtos :cores="lista" titulo="Esse sao as cores"></lista-produtos>
+</div>
+<script type="module">
+
+  const ItemProduto = {
+    name: 'ItemProduto',
+    // props: ['nomeCor', 'tituloCor', 'listaItens'],
+    props: {
+      nomeCor: String,
+      tituloCor: String,
+      listaItens: [Array, String],
+      fruta: {
+        type: String,
+        required: true,
+      },
+      tamanho: {
+        type: String,
+        default: 'Grande',
+      }
+    },
+    template: `
+    <li>
+      <h3>{{tituloCor}}</h3>
+      <p>Olha a cor: {{nomeCor}}</p>
+      <p v-for="item in listaItens">{{item}}</p>
+      <p>{{fruta}}</p>
+      <p>{{tamanho}}</p>
+    </li>`,
+  }
+
+  const listaProdutos = {
+    name: 'ListaProdutos',
+    props: ['cores', 'titulo'],
+    components: {
+      ItemProduto,
+    },
+    template: `
+    <ul>
+      <h1>{{titulo}}</h1>
+      <item-produto 
+        v-for="(cor, index) in cores" 
+        :nomeCor="cor" 
+        :tituloCor="titulo" 
+        :key="cor + index"
+        :listaItens="['item1','item2']"
+        fruta="uva"
+        ></item-produto>
+    </ul>
+    `,
+  }
+
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      lista: ['Azul', 'Verde', 'Amarelo']
+    },
+    components: {
+      listaProdutos
+    }
+  });
+
+</script>
+</body>
+</html>

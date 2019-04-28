@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Props - Vue</title>
+</head>
+<body>
+<div id="app">
+  <p @click="total++">{{total}}</p>
+  <botao-contador :valor="total"></botao-contador>
+</div>
+<script type="module">
+
+  const BotaoContador = {
+    name: 'BotaoContador',
+    props: {
+      valor: {
+        type: Number
+      }
+    },
+    data() {
+      return {
+        valorAtual: this.valor
+      }
+    },
+    template: `
+      <button>total: {{valor}}</button>
+    `,
+  }
+
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      total: 0,
+    },
+    components: {
+      BotaoContador,
+    }
+  });
+
+</script>
+</body>
+</html>

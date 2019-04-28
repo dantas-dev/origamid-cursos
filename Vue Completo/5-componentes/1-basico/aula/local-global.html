@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Basico de Componentes - Vue</title>
+</head>
+<body>
+  <div id="app">
+    <componente-global></componente-global>
+    <componente-local></componente-local>
+    <componente-local2></componente-local2>
+    <!-- {{mensagem}}
+    <botao-contador/> -->
+  </div>
+  <script>
+    const ComponenteLocal = {
+          name: 'ComponenteLocal',
+          template: `<p>Componente local</p>`,
+        }
+    const ComponenteLocal2 = {
+          name: 'ComponenteLocal',
+          data() {
+            return {
+              contar: 99,
+            }
+          },
+          template: `
+          <div>
+              <p>Componente local 2 {{contarDobro}}</p>
+              <p>Componente local 2 {{contar}}</p>
+              <componente-global></componente-global>
+          </div>
+          `,
+          computed: {
+            contarDobro() {
+              return this.contar * 2;
+            }
+          }
+        }
+
+    Vue.component('ComponenteGlobal', {
+      template: `<p>componente global</p>`,
+    });
+
+    // Vue.component('BotaoContador',{
+    //   data() {
+    //     return {
+    //       total: 0,
+    //     }
+    //   },
+    //   template: `<button @click="total++">contar: {{total}}</button>`,
+    //   methods: {
+    //     mostrarConsole() {
+    //       console.log('ativo');
+    //     }
+    //   }
+    // });
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        mensagem: 'isso',
+      },
+      components: {
+        ComponenteLocal,
+        ComponenteLocal2,
+      }
+    });
+  </script>
+</body>
+</html>
