@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/vue.js"></script>
+  <title>Events - Vue</title>
+</head>
+<body>
+<div id="app">
+  <!-- <meu-botao @origamid="mostrarMensagem"></meu-botao> -->
+  <!-- <p>{{mensagem}}</p> -->
+  <!-- <p>{{totalClientes}}</p> -->
+  <p>{{contador}}</p>
+
+  <!-- .sync =  @update:contador="contador = $event" -->
+  <meu-botao 
+    :contador.sync="contador"
+  ></meu-botao>
+</div>
+<script type="module">
+  const MeuBotao = {
+    name: 'MeuBotao',
+    props: {
+      contador: Number,
+    },
+    data() {
+      return {
+        contadorComponente: this.contador
+      }
+    },
+    // data() {
+    //   return {
+    //     totalClientes: 200
+    //   }
+    // },
+    template: `<button @click="incrementar">Clique {{contadorComponente}}</button>`,
+    methods: {
+      incrementar() {
+        this.contadorComponente++;
+        this.$emit('update:contador', this.contadorComponente);
+      }
+    }
+    // methods: {
+    //   handleClick() {
+    //     this.$emit('origamid', this.totalClientes * 2);
+    //   }
+    // },
+    // created() {
+    //   setTimeout(() => {
+    //     this.$emit('origamid', this.totalClientes);
+    //   }, 2000);
+    // }
+  }
+
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      // mensagem: '',
+      // totalClientes: 0,
+      contador: 0,
+    },
+    components: {
+      MeuBotao,
+    },
+    methods: {
+      // mostrarMensagem(mensagem) {
+      //   console.log(mensagem);
+      //   this.mensagem = 'Origamid ocorreu';
+      //   this.totalClientes = mensagem;
+      // }
+    }
+  });
+</script>
+</body>
+</html>
