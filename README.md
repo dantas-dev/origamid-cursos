@@ -1,7 +1,7 @@
 # OrigamidCursos
 Projetos feitos no curso da origamid
 
-https://www.origamid.com/cursos/
+Site: https://www.origamid.com/cursos/
 
 - [x] Web Designer Completo
 - [x] WordPress Como CMS
