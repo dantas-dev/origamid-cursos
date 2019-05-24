@@ -14,7 +14,7 @@ Site: https://www.origamid.com/cursos/
 - [x] Bootstrap 4
 - [x] Automação Front End com NPM
 - [x] Javascript completo ES6+
+- [x] WordPress REST API
 - [ ] Vue.js Completo
-- [ ] WordPress REST API
 - [ ] UI Design Avançado
 - [ ] UX Design Heurísticas
