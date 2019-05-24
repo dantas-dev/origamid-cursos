@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+  <input type="file" multiple>
+  <button>Enviar</button>
+
+  <script>
+    const input = document.querySelector('input');
+    const button = document.querySelector('button');
+
+    const options = {
+      headers: {
+        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9yYW5la2FwaS5sb2NhbCIsImlhdCI6MTU1ODU4ODY1NiwibmJmIjoxNTU4NTg4NjU2LCJleHAiOjE1NTg2NzUwNTYsImRhdGEiOnsidXNlciI6eyJpZCI6IjQifX19.mOlfx8dHubAVXad_sZpx_AkwXU7R-qZGqHe5FybGCPY"
+      }
+    }
+
+    function handleClick() {
+      const files = input.files;
+
+      const form = new FormData();
+
+      for(let i = 0; i < files.length; i++) {
+        form.append(files[i].name, files[i]);
+      }
+
+      form.append('nome', 'Camera');
+      form.append('descricao', 'Esse é usado');
+      form.append('preco', '299');
+
+      axios.post('http://ranekapi.local/wp-json/api/produto', form, options);
+    }
+
+    button.addEventListener('click', handleClick);
+  </script>
+
+
+</body>
+</html>
