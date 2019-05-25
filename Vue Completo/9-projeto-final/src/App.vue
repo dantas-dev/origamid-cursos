@@ -2,27 +2,41 @@
   <div id="app">
     <TheHeader/>
     <main id="main">
-      <router-view/>
+      <transition mode="out-in">
+        <router-view/>
+      </transition>
     </main>
     <TheFooter/>
   </div>
 </template>
+
 <script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import { api } from "@/services.js";
 
 export default {
   components: {
     TheHeader,
     TheFooter
+  },
+  created() {
+    if (window.localStorage.token) {
+      api
+        .validateToken()
+        .then(() => {
+          this.$store.dispatch("getUsuario");
+        })
+        .catch(() => {
+          window.localStorage.removeItem("token");
+        });
+    }
   }
 };
 </script>
 
 <style>
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
@@ -32,8 +46,8 @@ li,
 h1,
 h2,
 p {
-  margin: 0;
-  padding: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 ul {
@@ -76,31 +90,42 @@ img {
   transform: scale(1.1);
 }
 
+.btn-disabled,
+.btn-disabled:hover {
+  background: #bbc;
+  transform: scale(1);
+}
+
 #app {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 #main {
   flex: 1;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
 input,
 textarea {
   border-radius: 4px;
-  border: none;
+  border: 1px solid white;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
-  border: 1px solid #fff;
   transition: all 0.3s;
   font-size: 1rem;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 input:hover,
-textarea:hover input:focus,
+input:focus,
+textarea:hover,
 textarea:focus {
   outline: none;
   box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);

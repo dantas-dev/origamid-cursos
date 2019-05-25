@@ -1,14 +1,13 @@
 <template>
   <ul v-if="paginasTotal > 1">
     <li v-for="pagina in paginas" :key="pagina">
-      <router-link :to="{ query: query(pagina) }">{{pagina}}</router-link>
+      <router-link :to="{query: query(pagina)}">{{pagina}}</router-link>
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: "ProdutosPaginar",
   props: {
     produtosPorPagina: {
       type: Number,
@@ -29,19 +28,18 @@ export default {
   },
   computed: {
     paginas() {
-      const currentPage = Number(this.$route.query._page);
-      const rangePages = 9;
-      const offsetPage = Math.ceil(rangePages / 2);
-      const totalPages = this.paginasTotal;
-
+      const current = Number(this.$route.query._page);
+      const range = 9;
+      const offset = Math.ceil(range / 2);
+      const total = this.paginasTotal;
       const pagesArray = [];
 
-      for (let i = 1; i <= totalPages; i++) {
+      for (let i = 1; i <= total; i++) {
         pagesArray.push(i);
       }
 
-      pagesArray.splice(0, currentPage - offsetPage);
-      pagesArray.splice(rangePages, totalPages);
+      pagesArray.splice(0, current - offset);
+      pagesArray.splice(range, total);
 
       return pagesArray;
     },

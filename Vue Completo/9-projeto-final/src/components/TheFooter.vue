@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>Ranek, alguns direitos reservados.</p>
+    <p>Ranek. Alguns direitos reservados.</p>
   </footer>
 </template>
 

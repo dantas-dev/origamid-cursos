@@ -1,7 +1,7 @@
 <template>
   <form>
     <input name="busca" id="busca" type="text" v-model="busca" placeholder="Buscar...">
-    <input type="submit" value="buscar" id="lupa" @click.prevent="buscarProdutos">
+    <input type="submit" id="lupa" value="Buscar" @click.prevent="buscarProdutos">
   </form>
 </template>
 
@@ -25,11 +25,11 @@ form {
   max-width: 600px;
   margin: 30px auto 60px auto;
   position: relative;
+  padding: 0 10px;
 }
 
 #busca {
   width: 100%;
-  border: 1px solid #eceef1;
   padding: 20px;
   border: none;
 }
@@ -47,8 +47,8 @@ form {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0px;
+  right: 0px;
   box-shadow: none;
 }
 </style>

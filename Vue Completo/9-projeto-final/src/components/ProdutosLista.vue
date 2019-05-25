@@ -3,8 +3,8 @@
     <transition mode="out-in">
       <div v-if="produtos && produtos.length" class="produtos" key="produtos">
         <div class="produto" v-for="(produto, index) in produtos" :key="index">
-          <router-link :to="{ name: 'produto', params: { id: produto.id } }">
-            <img v-if="produtos.fotos" :src="produto.fotos[0]" :alt="produto.fotos[0].titulo">
+          <router-link :to="{name: 'produto', params: {id: produto.id}}">
+            <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo">
             <p class="preco">{{produto.preco | numeroPreco}}</p>
             <h2 class="titulo">{{produto.nome}}</h2>
             <p>{{produto.descricao}}</p>
@@ -12,10 +12,10 @@
         </div>
         <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>
       </div>
-      <div v-else-if="produtos && produtos.length === 0" key="sem-resultado">
+      <div v-else-if="produtos && produtos.length === 0" key="sem-resultados">
         <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
       </div>
-      <PaginaCarregando v-else key="carregando"/>
+      <PaginaCarregando key="carregando" v-else/>
     </transition>
   </section>
 </template>
@@ -40,23 +40,21 @@ export default {
   computed: {
     url() {
       const query = serialize(this.$route.query);
-      return `/produto/?_limit=${this.produtosPorPagina}${query}`;
+      return `/produto?_limit=${this.produtosPorPagina}${query}`;
+    }
+  },
+  methods: {
+    getProdutos() {
+      this.produtos = null;
+      api.get(this.url).then(response => {
+        this.produtosTotal = Number(response.headers["x-total-count"]);
+        this.produtos = response.data;
+      });
     }
   },
   watch: {
     url() {
       this.getProdutos();
-    }
-  },
-  methods: {
-    async getProdutos() {
-      this.produtos = null;
-      const response = await api.get(this.url);
-      const data = await response.data;
-      setTimeout(() => {
-        this.produtosTotal = +response.headers["x-total-count"];
-        this.produtos = data;
-      }, 1500);
     }
   },
   created() {
@@ -78,13 +76,20 @@ export default {
   margin: 30px;
 }
 
+@media screen and (max-width: 500px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 10px;
+  }
+}
+
 .produto {
   box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
   padding: 10px;
   background: #fff;
-  border: 1px solid #eceef1;
   border-radius: 4px;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .produto:hover {
