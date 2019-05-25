@@ -15,6 +15,6 @@ Site: https://www.origamid.com/cursos/
 - [x] Automação Front End com NPM
 - [x] Javascript completo ES6+
 - [x] WordPress REST API
-- [ ] Vue.js Completo
+- [x] Vue.js Completo
 - [ ] UI Design Avançado
 - [ ] UX Design Heurísticas
